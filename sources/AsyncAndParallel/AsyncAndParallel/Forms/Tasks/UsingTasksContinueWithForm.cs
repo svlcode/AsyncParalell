@@ -18,11 +18,16 @@ namespace AsyncAndParallel
             InitializeComponent();
         }
 
+        private int _counter = 0;
+
         protected override void OnStart()
         {
             StartProgressBar();
 
             string elapsedSeconds = string.Empty;
+
+            _counter++;
+            lblCount.Text = $"Processes count :{_counter}";
 
             Task worker = Task.Factory.StartNew(() =>
             {
@@ -37,7 +42,12 @@ namespace AsyncAndParallel
             worker.ContinueWith(a =>
             {
                 listBoxResult.Items.Add($"task {a.Id} finished in [{elapsedSeconds} secs]");
-                StopProgressBar();
+
+                _counter--;
+                lblCount.Text = $"Processes count :{_counter}";
+
+                if (_counter == 0)
+                    StopProgressBar();
             },
                 TaskScheduler.FromCurrentSynchronizationContext()
             );
