@@ -34,8 +34,8 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageThreads = new System.Windows.Forms.TabPage();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
-            this.btnUsingTasks = new System.Windows.Forms.Button();
             this.btnUsingTasksContinueWith = new System.Windows.Forms.Button();
+            this.btnUsingTasks = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
@@ -73,8 +73,8 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPageThreads);
             this.tabControl.Controls.Add(this.tabPageTasks);
+            this.tabControl.Controls.Add(this.tabPageThreads);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -106,16 +106,6 @@
             this.tabPageTasks.Text = "Tasks";
             this.tabPageTasks.UseVisualStyleBackColor = true;
             // 
-            // btnUsingTasks
-            // 
-            this.btnUsingTasks.Location = new System.Drawing.Point(8, 6);
-            this.btnUsingTasks.Name = "btnUsingTasks";
-            this.btnUsingTasks.Size = new System.Drawing.Size(171, 23);
-            this.btnUsingTasks.TabIndex = 1;
-            this.btnUsingTasks.Text = "Using Tasks";
-            this.btnUsingTasks.UseVisualStyleBackColor = true;
-            this.btnUsingTasks.Click += new System.EventHandler(this.btnUsingTasks_Click);
-            // 
             // btnUsingTasksContinueWith
             // 
             this.btnUsingTasksContinueWith.Location = new System.Drawing.Point(8, 35);
@@ -125,6 +115,16 @@
             this.btnUsingTasksContinueWith.Text = "Using Tasks ContinueWith";
             this.btnUsingTasksContinueWith.UseVisualStyleBackColor = true;
             this.btnUsingTasksContinueWith.Click += new System.EventHandler(this.btnUsingTasksContinueWith_Click);
+            // 
+            // btnUsingTasks
+            // 
+            this.btnUsingTasks.Location = new System.Drawing.Point(8, 6);
+            this.btnUsingTasks.Name = "btnUsingTasks";
+            this.btnUsingTasks.Size = new System.Drawing.Size(171, 23);
+            this.btnUsingTasks.TabIndex = 1;
+            this.btnUsingTasks.Text = "Using Tasks";
+            this.btnUsingTasks.UseVisualStyleBackColor = true;
+            this.btnUsingTasks.Click += new System.EventHandler(this.btnUsingTasks_Click);
             // 
             // MainForm
             // 
