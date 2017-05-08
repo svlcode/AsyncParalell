@@ -28,7 +28,7 @@ namespace AsyncAndParallel.DownloadPDF
                 btnStart.Enabled = true;
 
             },
-                TaskScheduler.FromCurrentSynchronizationContext());
+            TaskScheduler.FromCurrentSynchronizationContext());
 
             task.Start();
         }

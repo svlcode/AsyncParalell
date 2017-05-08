@@ -29,7 +29,7 @@ namespace AsyncAndParallel.Forms.BaseForms
         protected void TimeConsumingTask()
         {
             long sum = 0;
-            for (int i = 0; i < int.MaxValue / 2; i++)
+            for (int i = 0; i < int.MaxValue; i++)
             {
                 sum += i;
             }

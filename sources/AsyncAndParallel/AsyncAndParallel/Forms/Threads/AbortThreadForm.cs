@@ -13,27 +13,39 @@ namespace AsyncAndParallel.Forms
 {
     public partial class AbortThreadForm : DownloadPdfForm
     {
+        Thread _thread;
+
         public AbortThreadForm()
         {
             InitializeComponent();
             Closing += AbortThreadForm_Closing;
         }
 
-        Thread _thread;
-
+        /// <summary>
+        /// Unlike a Forground thread, a Background thread will not impose restrictions to the process which needs terminate.
+        /// Therefore, the process will terminate without waiting for the Background thread to complete.
+        /// </summary>
         protected override void OnStart()
         {
-            //Solution1:
-            //_thread = new Thread(TimeConsumingTask) {IsBackground = true};
+            // Creates a Foreground thread (the default value of IsBackground is false).
+            _thread = new Thread(()=>
+            {
+                Thread.Sleep(10000);
+            });
+            
+            // Sets the a flag which indicates that this is a Background thread.
+            //_thread.IsBackground = true;
 
-            //Solution2: there is a problem when more threads are created
-            _thread = new Thread(TimeConsumingTask);
             _thread.Start();
         }
 
+        /// <summary>
+        /// In case multiple threads are created, this will terminte only the last created thread.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AbortThreadForm_Closing(object sender, CancelEventArgs e)
         {
-            //there is a problem when more threads are created
             if (_thread != null)
             {
                 _thread.Abort();

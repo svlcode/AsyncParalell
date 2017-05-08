@@ -22,6 +22,8 @@ namespace AsyncAndParallel
         {
             StartProgressBar();
 
+            // This is a shared variable used by both tasks. This could be a potential conflict. 
+            // However, since the second task will execute after the first one finishes, the race condition will not occur.
             string elapsedSeconds = string.Empty;
 
             Task worker = Task.Factory.StartNew(() =>
@@ -34,7 +36,8 @@ namespace AsyncAndParallel
                 elapsedSeconds = $"{sw.ElapsedMilliseconds / 1000.0:#,##0.00}";
             });
 
-            worker.ContinueWith(a =>
+            // Update the UI as soon as the worker task is completed. In this case the continuation task will run on the UI thread.
+            Task secondTask = worker.ContinueWith(a =>
             {
                 listBoxResult.Items.Add($"task {a.Id} finished in [{elapsedSeconds} secs]");
                 StopProgressBar();
