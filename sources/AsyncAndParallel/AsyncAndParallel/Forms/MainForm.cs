@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AsyncAndParallel.DownloadPDF;
@@ -51,6 +52,11 @@ namespace AsyncAndParallel
         private void btnUsingTasksContinueWith_Click(object sender, EventArgs e)
         {
             ShowForm<UsingTasksContinueWithForm>();
+        }
+
+        private void btnBackgrounForeground_Click(object sender, EventArgs e)
+        {
+            ShowForm<BackgroundForegroundThreadsForm>();
         }
     }
 }

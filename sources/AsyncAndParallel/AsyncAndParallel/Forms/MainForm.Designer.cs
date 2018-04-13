@@ -34,8 +34,12 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageThreads = new System.Windows.Forms.TabPage();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
-            this.btnUsingTasks = new System.Windows.Forms.Button();
             this.btnUsingTasksContinueWith = new System.Windows.Forms.Button();
+            this.btnUsingTasks = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnBackgrounForeground = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
@@ -45,7 +49,7 @@
             // 
             this.btnJoinThread.Location = new System.Drawing.Point(8, 6);
             this.btnJoinThread.Name = "btnJoinThread";
-            this.btnJoinThread.Size = new System.Drawing.Size(127, 23);
+            this.btnJoinThread.Size = new System.Drawing.Size(147, 23);
             this.btnJoinThread.TabIndex = 0;
             this.btnJoinThread.Text = "Join Thread";
             this.btnJoinThread.UseVisualStyleBackColor = true;
@@ -55,7 +59,7 @@
             // 
             this.btnAbortThreads.Location = new System.Drawing.Point(8, 64);
             this.btnAbortThreads.Name = "btnAbortThreads";
-            this.btnAbortThreads.Size = new System.Drawing.Size(127, 23);
+            this.btnAbortThreads.Size = new System.Drawing.Size(147, 23);
             this.btnAbortThreads.TabIndex = 0;
             this.btnAbortThreads.Text = "Abort Threads";
             this.btnAbortThreads.UseVisualStyleBackColor = true;
@@ -65,7 +69,7 @@
             // 
             this.btnThreadCallback.Location = new System.Drawing.Point(8, 35);
             this.btnThreadCallback.Name = "btnThreadCallback";
-            this.btnThreadCallback.Size = new System.Drawing.Size(127, 23);
+            this.btnThreadCallback.Size = new System.Drawing.Size(147, 23);
             this.btnThreadCallback.TabIndex = 0;
             this.btnThreadCallback.Text = "Thread callback";
             this.btnThreadCallback.UseVisualStyleBackColor = true;
@@ -75,21 +79,26 @@
             // 
             this.tabControl.Controls.Add(this.tabPageThreads);
             this.tabControl.Controls.Add(this.tabPageTasks);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(612, 323);
+            this.tabControl.Size = new System.Drawing.Size(724, 351);
             this.tabControl.TabIndex = 1;
             // 
             // tabPageThreads
             // 
+            this.tabPageThreads.Controls.Add(this.btnBackgrounForeground);
+            this.tabPageThreads.Controls.Add(this.label2);
+            this.tabPageThreads.Controls.Add(this.label3);
+            this.tabPageThreads.Controls.Add(this.label1);
             this.tabPageThreads.Controls.Add(this.btnJoinThread);
             this.tabPageThreads.Controls.Add(this.btnThreadCallback);
             this.tabPageThreads.Controls.Add(this.btnAbortThreads);
             this.tabPageThreads.Location = new System.Drawing.Point(4, 22);
             this.tabPageThreads.Name = "tabPageThreads";
             this.tabPageThreads.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageThreads.Size = new System.Drawing.Size(604, 297);
+            this.tabPageThreads.Size = new System.Drawing.Size(716, 325);
             this.tabPageThreads.TabIndex = 0;
             this.tabPageThreads.Text = "Threads";
             this.tabPageThreads.UseVisualStyleBackColor = true;
@@ -106,16 +115,6 @@
             this.tabPageTasks.Text = "Tasks";
             this.tabPageTasks.UseVisualStyleBackColor = true;
             // 
-            // btnUsingTasks
-            // 
-            this.btnUsingTasks.Location = new System.Drawing.Point(8, 6);
-            this.btnUsingTasks.Name = "btnUsingTasks";
-            this.btnUsingTasks.Size = new System.Drawing.Size(171, 23);
-            this.btnUsingTasks.TabIndex = 1;
-            this.btnUsingTasks.Text = "Using Tasks";
-            this.btnUsingTasks.UseVisualStyleBackColor = true;
-            this.btnUsingTasks.Click += new System.EventHandler(this.btnUsingTasks_Click);
-            // 
             // btnUsingTasksContinueWith
             // 
             this.btnUsingTasksContinueWith.Location = new System.Drawing.Point(8, 35);
@@ -126,16 +125,65 @@
             this.btnUsingTasksContinueWith.UseVisualStyleBackColor = true;
             this.btnUsingTasksContinueWith.Click += new System.EventHandler(this.btnUsingTasksContinueWith_Click);
             // 
+            // btnUsingTasks
+            // 
+            this.btnUsingTasks.Location = new System.Drawing.Point(8, 6);
+            this.btnUsingTasks.Name = "btnUsingTasks";
+            this.btnUsingTasks.Size = new System.Drawing.Size(171, 23);
+            this.btnUsingTasks.TabIndex = 1;
+            this.btnUsingTasks.Text = "Using Tasks";
+            this.btnUsingTasks.UseVisualStyleBackColor = true;
+            this.btnUsingTasks.Click += new System.EventHandler(this.btnUsingTasks_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(169, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "This will block the current UI Thread.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(169, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(506, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "This will demonstrate the difference between Background and Foreground threads an" +
+    "d how to abort them.";
+            // 
+            // btnBackgrounForeground
+            // 
+            this.btnBackgrounForeground.Location = new System.Drawing.Point(8, 93);
+            this.btnBackgrounForeground.Name = "btnBackgrounForeground";
+            this.btnBackgrounForeground.Size = new System.Drawing.Size(147, 23);
+            this.btnBackgrounForeground.TabIndex = 2;
+            this.btnBackgrounForeground.Text = "Background vs. Foreground";
+            this.btnBackgrounForeground.UseVisualStyleBackColor = true;
+            this.btnBackgrounForeground.Click += new System.EventHandler(this.btnBackgrounForeground_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(169, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(263, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "This will demonstrate how to stop an executing thread.";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 323);
+            this.ClientSize = new System.Drawing.Size(724, 351);
             this.Controls.Add(this.tabControl);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.tabControl.ResumeLayout(false);
             this.tabPageThreads.ResumeLayout(false);
+            this.tabPageThreads.PerformLayout();
             this.tabPageTasks.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -150,5 +198,9 @@
         private System.Windows.Forms.TabPage tabPageTasks;
         private System.Windows.Forms.Button btnUsingTasks;
         private System.Windows.Forms.Button btnUsingTasksContinueWith;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBackgrounForeground;
+        private System.Windows.Forms.Label label2;
     }
 }

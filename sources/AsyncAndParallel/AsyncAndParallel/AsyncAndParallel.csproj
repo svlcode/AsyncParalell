@@ -76,6 +76,12 @@
     <Compile Include="Forms\HelperForms\DownloadPdfForm.Designer.cs">
       <DependentUpon>DownloadPdfForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Threads\BackgroundForegroundThreadsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Threads\BackgroundForegroundThreadsForm.Designer.cs">
+      <DependentUpon>BackgroundForegroundThreadsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Threads\ThreadInvokeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Threads\AbortThreadForm.resx">
       <DependentUpon>AbortThreadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Threads\BackgroundForegroundThreadsForm.resx">
+      <DependentUpon>BackgroundForegroundThreadsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

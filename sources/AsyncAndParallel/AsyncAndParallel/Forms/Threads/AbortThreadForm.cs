@@ -23,7 +23,7 @@ namespace AsyncAndParallel.Forms
 
         /// <summary>
         /// Unlike a Forground thread, a Background thread will not impose restrictions to the process which needs terminate.
-        /// Therefore, the process will terminate without waiting for the Background thread to complete.
+        /// Therefore, the process will terminate without waiting for the Background thread to complete. 
         /// </summary>
         protected override void OnStart()
         {
@@ -32,7 +32,7 @@ namespace AsyncAndParallel.Forms
             {
                 Thread.Sleep(10000);
             });
-            
+
             // Sets the a flag which indicates that this is a Background thread.
             //_thread.IsBackground = true;
 
