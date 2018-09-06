@@ -52,6 +52,12 @@
     <Compile Include="Forms\Tasks\BasicAsyncForm.Designer.cs">
       <DependentUpon>BasicAsyncForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.Designer.cs">
+      <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Threads\AbortThreadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\BasicAsyncForm.resx">
       <DependentUpon>BasicAsyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
+      <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Threads\AbortThreadForm.resx">
       <DependentUpon>AbortThreadForm.cs</DependentUpon>

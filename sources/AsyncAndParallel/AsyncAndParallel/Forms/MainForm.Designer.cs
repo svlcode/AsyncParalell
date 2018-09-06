@@ -41,6 +41,7 @@
             this.btnUsingTasksContinueWith = new System.Windows.Forms.Button();
             this.btnUsingTasks = new System.Windows.Forms.Button();
             this.btnBasicAsync = new System.Windows.Forms.Button();
+            this.btnTaskCompletionSource = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
@@ -144,6 +145,7 @@
             // 
             // tabPageTasks
             // 
+            this.tabPageTasks.Controls.Add(this.btnTaskCompletionSource);
             this.tabPageTasks.Controls.Add(this.btnBasicAsync);
             this.tabPageTasks.Controls.Add(this.btnUsingTasksContinueWith);
             this.tabPageTasks.Controls.Add(this.btnUsingTasks);
@@ -185,6 +187,16 @@
             this.btnBasicAsync.UseVisualStyleBackColor = true;
             this.btnBasicAsync.Click += new System.EventHandler(this.btnBasicAsync_Click);
             // 
+            // btnTaskCompletionSource
+            // 
+            this.btnTaskCompletionSource.Location = new System.Drawing.Point(8, 93);
+            this.btnTaskCompletionSource.Name = "btnTaskCompletionSource";
+            this.btnTaskCompletionSource.Size = new System.Drawing.Size(171, 23);
+            this.btnTaskCompletionSource.TabIndex = 1;
+            this.btnTaskCompletionSource.Text = "Using TaskCompletionSource";
+            this.btnTaskCompletionSource.UseVisualStyleBackColor = true;
+            this.btnTaskCompletionSource.Click += new System.EventHandler(this.btnTaskCompletionSource_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,5 +227,6 @@
         private System.Windows.Forms.Button btnBackgrounForeground;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBasicAsync;
+        private System.Windows.Forms.Button btnTaskCompletionSource;
     }
 }

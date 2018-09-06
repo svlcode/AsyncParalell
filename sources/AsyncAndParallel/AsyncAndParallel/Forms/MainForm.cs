@@ -64,5 +64,10 @@ namespace AsyncAndParallel
         {
             ShowForm<BasicAsyncForm>();
         }
+
+        private void btnTaskCompletionSource_Click(object sender, EventArgs e)
+        {
+            ShowForm<UsingTaskCompletionSourceForm>();
+        }
     }
 }
