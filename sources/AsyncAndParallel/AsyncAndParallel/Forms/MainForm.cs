@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AsyncAndParallel.DownloadPDF;
 using AsyncAndParallel.Forms;
+using AsyncAndParallel.Forms.Tasks;
 using AsyncAndParallel.Forms.Threads;
 
 namespace AsyncAndParallel
@@ -44,6 +45,11 @@ namespace AsyncAndParallel
             ShowForm<ThreadCallbackForm>();
         }
 
+        private void btnBackgrounForeground_Click(object sender, EventArgs e)
+        {
+            ShowForm<BackgroundForegroundThreadsForm>();
+        }
+
         private void btnUsingTasks_Click(object sender, EventArgs e)
         {
             ShowForm<UsingTasksForm>();
@@ -54,9 +60,9 @@ namespace AsyncAndParallel
             ShowForm<UsingTasksContinueWithForm>();
         }
 
-        private void btnBackgrounForeground_Click(object sender, EventArgs e)
+        private void btnBasicAsync_Click(object sender, EventArgs e)
         {
-            ShowForm<BackgroundForegroundThreadsForm>();
+            ShowForm<BasicAsyncForm>();
         }
     }
 }

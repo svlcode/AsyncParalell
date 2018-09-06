@@ -17,13 +17,19 @@ namespace AsyncAndParallel.Forms.BaseForms
             InitializeComponent();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private async void btnStart_Click(object sender, EventArgs e)
         {
             OnStart();
+            await OnStartAsync();
         }
 
         protected virtual void OnStart()
         {
+        }
+
+        protected virtual async Task OnStartAsync()
+        {
+            await Task.Yield();
         }
 
         protected void TimeConsumingTask()

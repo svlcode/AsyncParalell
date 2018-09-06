@@ -25,14 +25,15 @@ namespace AsyncAndParallel.Forms.Threads
             ThreadStart threadStart = new ThreadStart(StartDownload);
             threadStart += () =>
             {
+                
                 MessageBox.Show("Download finished");
             };
 
             Thread thread = new Thread(threadStart) { IsBackground = true };
             thread.Start();
             thread.Join();
-
             btnStart.Enabled = true;
+
         }
     }
 }
