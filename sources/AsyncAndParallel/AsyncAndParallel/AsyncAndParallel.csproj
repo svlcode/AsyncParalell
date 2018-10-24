@@ -52,6 +52,12 @@
     <Compile Include="Forms\Tasks\BasicAsyncForm.Designer.cs">
       <DependentUpon>BasicAsyncForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\AwaitAllTasksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAllTasksForm.Designer.cs">
+      <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\BasicAsyncForm.resx">
       <DependentUpon>BasicAsyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\AwaitAllTasksForm.resx">
+      <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
       <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>

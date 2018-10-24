@@ -69,5 +69,10 @@ namespace AsyncAndParallel
         {
             ShowForm<UsingTaskCompletionSourceForm>();
         }
+
+        private void btnAwaitAllTasks_Click(object sender, EventArgs e)
+        {
+            ShowForm<AwaitAllTasksForm>();
+        }
     }
 }

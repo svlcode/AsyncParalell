@@ -20,8 +20,6 @@ namespace AsyncAndParallel.Forms.Tasks
             _tasks = new List<Task>();
         }
 
-
-
         protected override async Task OnStartAsync()
         {
             if(AllTasksCompleted())

@@ -40,5 +40,12 @@ namespace AsyncAndParallel.Forms.BaseForms
                 sum += i;
             }
         }
+
+        protected async Task<int> StartRandomTaskAsync(int minValue, int maxValue)
+        {
+            var randomMiliseconds = new Random(DateTime.Now.Millisecond).Next(minValue, maxValue);
+            await Task.Delay(randomMiliseconds);
+            return randomMiliseconds;
+        }
     }
 }

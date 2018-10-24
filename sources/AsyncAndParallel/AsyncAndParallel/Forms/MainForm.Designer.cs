@@ -38,10 +38,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
+            this.btnAwaitMultipleTasks = new System.Windows.Forms.Button();
+            this.btnTaskCompletionSource = new System.Windows.Forms.Button();
+            this.btnBasicAsync = new System.Windows.Forms.Button();
             this.btnUsingTasksContinueWith = new System.Windows.Forms.Button();
             this.btnUsingTasks = new System.Windows.Forms.Button();
-            this.btnBasicAsync = new System.Windows.Forms.Button();
-            this.btnTaskCompletionSource = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
@@ -145,6 +146,7 @@
             // 
             // tabPageTasks
             // 
+            this.tabPageTasks.Controls.Add(this.btnAwaitMultipleTasks);
             this.tabPageTasks.Controls.Add(this.btnTaskCompletionSource);
             this.tabPageTasks.Controls.Add(this.btnBasicAsync);
             this.tabPageTasks.Controls.Add(this.btnUsingTasksContinueWith);
@@ -156,6 +158,36 @@
             this.tabPageTasks.TabIndex = 1;
             this.tabPageTasks.Text = "Tasks";
             this.tabPageTasks.UseVisualStyleBackColor = true;
+            // 
+            // btnAwaitMultipleTasks
+            // 
+            this.btnAwaitMultipleTasks.Location = new System.Drawing.Point(8, 122);
+            this.btnAwaitMultipleTasks.Name = "btnAwaitMultipleTasks";
+            this.btnAwaitMultipleTasks.Size = new System.Drawing.Size(171, 23);
+            this.btnAwaitMultipleTasks.TabIndex = 1;
+            this.btnAwaitMultipleTasks.Text = "Await All Tasks";
+            this.btnAwaitMultipleTasks.UseVisualStyleBackColor = true;
+            this.btnAwaitMultipleTasks.Click += new System.EventHandler(this.btnAwaitAllTasks_Click);
+            // 
+            // btnTaskCompletionSource
+            // 
+            this.btnTaskCompletionSource.Location = new System.Drawing.Point(8, 93);
+            this.btnTaskCompletionSource.Name = "btnTaskCompletionSource";
+            this.btnTaskCompletionSource.Size = new System.Drawing.Size(171, 23);
+            this.btnTaskCompletionSource.TabIndex = 1;
+            this.btnTaskCompletionSource.Text = "Using TaskCompletionSource";
+            this.btnTaskCompletionSource.UseVisualStyleBackColor = true;
+            this.btnTaskCompletionSource.Click += new System.EventHandler(this.btnTaskCompletionSource_Click);
+            // 
+            // btnBasicAsync
+            // 
+            this.btnBasicAsync.Location = new System.Drawing.Point(8, 64);
+            this.btnBasicAsync.Name = "btnBasicAsync";
+            this.btnBasicAsync.Size = new System.Drawing.Size(171, 23);
+            this.btnBasicAsync.TabIndex = 1;
+            this.btnBasicAsync.Text = "Basic Async";
+            this.btnBasicAsync.UseVisualStyleBackColor = true;
+            this.btnBasicAsync.Click += new System.EventHandler(this.btnBasicAsync_Click);
             // 
             // btnUsingTasksContinueWith
             // 
@@ -176,26 +208,6 @@
             this.btnUsingTasks.Text = "Using Tasks";
             this.btnUsingTasks.UseVisualStyleBackColor = true;
             this.btnUsingTasks.Click += new System.EventHandler(this.btnUsingTasks_Click);
-            // 
-            // btnBasicAsync
-            // 
-            this.btnBasicAsync.Location = new System.Drawing.Point(8, 64);
-            this.btnBasicAsync.Name = "btnBasicAsync";
-            this.btnBasicAsync.Size = new System.Drawing.Size(171, 23);
-            this.btnBasicAsync.TabIndex = 1;
-            this.btnBasicAsync.Text = "Basic Async";
-            this.btnBasicAsync.UseVisualStyleBackColor = true;
-            this.btnBasicAsync.Click += new System.EventHandler(this.btnBasicAsync_Click);
-            // 
-            // btnTaskCompletionSource
-            // 
-            this.btnTaskCompletionSource.Location = new System.Drawing.Point(8, 93);
-            this.btnTaskCompletionSource.Name = "btnTaskCompletionSource";
-            this.btnTaskCompletionSource.Size = new System.Drawing.Size(171, 23);
-            this.btnTaskCompletionSource.TabIndex = 1;
-            this.btnTaskCompletionSource.Text = "Using TaskCompletionSource";
-            this.btnTaskCompletionSource.UseVisualStyleBackColor = true;
-            this.btnTaskCompletionSource.Click += new System.EventHandler(this.btnTaskCompletionSource_Click);
             // 
             // MainForm
             // 
@@ -228,5 +240,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBasicAsync;
         private System.Windows.Forms.Button btnTaskCompletionSource;
+        private System.Windows.Forms.Button btnAwaitMultipleTasks;
     }
 }
