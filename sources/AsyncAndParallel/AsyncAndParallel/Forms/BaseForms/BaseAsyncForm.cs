@@ -1,26 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AsyncAndParallel.Forms.BaseForms
 {
-    public partial class BaseListBoxForm : Form
+    public partial class BaseAsyncForm : Form
     {
-        public BaseListBoxForm()
+        public BaseAsyncForm()
         {
             InitializeComponent();
-        }
-
-        private async void btnStart_Click(object sender, EventArgs e)
-        {
-            OnStart();
-            await OnStartAsync();
         }
 
         protected virtual void OnStart()
@@ -32,7 +20,7 @@ namespace AsyncAndParallel.Forms.BaseForms
             await Task.Yield();
         }
 
-        protected void TimeConsumingTask()
+        protected void StartTimeConsumingTask()
         {
             long sum = 0;
             for (int i = 0; i < int.MaxValue; i++)

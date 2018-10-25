@@ -74,5 +74,10 @@ namespace AsyncAndParallel
         {
             ShowForm<AwaitAllTasksForm>();
         }
+
+        private void btnDeadlock_Click(object sender, EventArgs e)
+        {
+            ShowForm<DeadlockForm>();
+        }
     }
 }

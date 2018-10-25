@@ -33,7 +33,7 @@ namespace AsyncAndParallel
                 _taskCounter++;
                 Stopwatch sw = Stopwatch.StartNew();
 
-                TimeConsumingTask();
+                StartTimeConsumingTask();
 
                 sw.Stop();
                 return $"{sw.ElapsedMilliseconds / 1000.0:#,##0.00}";

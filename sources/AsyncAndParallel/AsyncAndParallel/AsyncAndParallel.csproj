@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BaseForms\BaseAsyncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseAsyncForm.Designer.cs">
+      <DependentUpon>BaseAsyncForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\BasicAsyncForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="Forms\Tasks\AwaitAllTasksForm.Designer.cs">
       <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\DeadlockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\DeadlockForm.Designer.cs">
+      <DependentUpon>DeadlockForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
       <SubType>Form</SubType>
@@ -70,16 +82,16 @@
     <Compile Include="Forms\Threads\AbortThreadForm.Designer.cs">
       <DependentUpon>AbortThreadForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxForm.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxForm.Designer.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxForm.Designer.cs">
       <DependentUpon>BaseListBoxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxProgressForm.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxProgressForm.Designer.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxProgressForm.Designer.cs">
       <DependentUpon>BaseListBoxProgressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tasks\UsingTasksForm.cs">
@@ -88,10 +100,10 @@
     <Compile Include="Forms\Tasks\UsingTasksForm.Designer.cs">
       <DependentUpon>UsingTasksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HelperForms\DownloadPdfForm.cs">
+    <Compile Include="Forms\BaseForms\DownloadPdfForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HelperForms\DownloadPdfForm.Designer.cs">
+    <Compile Include="Forms\BaseForms\DownloadPdfForm.Designer.cs">
       <DependentUpon>DownloadPdfForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Threads\BackgroundForegroundThreadsForm.cs">
@@ -132,13 +144,16 @@
     <Compile Include="Forms\Threads\JoinThreadForm.Designer.cs">
       <DependentUpon>JoinThreadForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\HelperForms\BaseListBoxForm.resx">
+    <EmbeddedResource Include="Forms\BaseForms\BaseAsyncForm.resx">
+      <DependentUpon>BaseAsyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseListBoxForm.resx">
       <DependentUpon>BaseListBoxForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HelperForms\BaseListBoxProgressForm.resx">
+    <EmbeddedResource Include="Forms\BaseForms\BaseListBoxProgressForm.resx">
       <DependentUpon>BaseListBoxProgressForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HelperForms\DownloadPdfForm.resx">
+    <EmbeddedResource Include="Forms\BaseForms\DownloadPdfForm.resx">
       <DependentUpon>DownloadPdfForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
@@ -149,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\AwaitAllTasksForm.resx">
       <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\DeadlockForm.resx">
+      <DependentUpon>DeadlockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
       <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
