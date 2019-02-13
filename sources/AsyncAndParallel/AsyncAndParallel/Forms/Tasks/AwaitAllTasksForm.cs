@@ -19,7 +19,7 @@ namespace AsyncAndParallel.Forms.Tasks
             Stopwatch sw = Stopwatch.StartNew();
 
             List<Task> tasks = new List<Task>();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < Number; i++)
             {
                 var task = StartRandomTaskAsync(1000, 3000);
                 listBoxResult.Items.Add($"Started task {task.Id}.");

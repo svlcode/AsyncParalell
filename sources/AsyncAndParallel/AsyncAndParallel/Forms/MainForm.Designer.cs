@@ -34,6 +34,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
             this.btnDeadlock = new System.Windows.Forms.Button();
+            this.btnAwaitAllOneByOne = new System.Windows.Forms.Button();
             this.btnAwaitAnyTask = new System.Windows.Forms.Button();
             this.btnAwaitMultipleTasks = new System.Windows.Forms.Button();
             this.btnTaskCompletionSource = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@
             // tabPageTasks
             // 
             this.tabPageTasks.Controls.Add(this.btnDeadlock);
+            this.tabPageTasks.Controls.Add(this.btnAwaitAllOneByOne);
             this.tabPageTasks.Controls.Add(this.btnAwaitAnyTask);
             this.tabPageTasks.Controls.Add(this.btnAwaitMultipleTasks);
             this.tabPageTasks.Controls.Add(this.btnTaskCompletionSource);
@@ -117,6 +119,16 @@
             this.btnDeadlock.Text = "Deadlock UI Thread";
             this.btnDeadlock.UseVisualStyleBackColor = true;
             this.btnDeadlock.Click += new System.EventHandler(this.btnDeadlock_Click);
+            // 
+            // btnAwaitAllOneByOne
+            // 
+            this.btnAwaitAllOneByOne.Location = new System.Drawing.Point(8, 180);
+            this.btnAwaitAllOneByOne.Name = "btnAwaitAllOneByOne";
+            this.btnAwaitAllOneByOne.Size = new System.Drawing.Size(171, 23);
+            this.btnAwaitAllOneByOne.TabIndex = 1;
+            this.btnAwaitAllOneByOne.Text = "Await All Tasks One By One";
+            this.btnAwaitAllOneByOne.UseVisualStyleBackColor = true;
+            this.btnAwaitAllOneByOne.Click += new System.EventHandler(this.btnAwaitAllOneByOne_Click);
             // 
             // btnAwaitAnyTask
             // 
@@ -267,5 +279,6 @@
         private System.Windows.Forms.Button btnAwaitMultipleTasks;
         private System.Windows.Forms.Button btnDeadlock;
         private System.Windows.Forms.Button btnAwaitAnyTask;
+        private System.Windows.Forms.Button btnAwaitAllOneByOne;
     }
 }

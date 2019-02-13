@@ -18,6 +18,16 @@ namespace AsyncAndParallel
             InitializeComponent();
         }
 
+        public int Number
+        {
+            get
+            {
+                int number;
+                int.TryParse(txtNumber.Text, out number);
+                return number;
+            }
+        }
+
         protected void StartProgressBar()
         {
             progressBar1.Style = ProgressBarStyle.Marquee;

@@ -76,5 +76,10 @@ namespace AsyncAndParallel
         {
             ShowForm<AwaitAnyTaskForm>();
         }
+
+        private void btnAwaitAllOneByOne_Click(object sender, EventArgs e)
+        {
+            ShowForm<AwaitAllOneByOneForm>();
+        }
     }
 }
