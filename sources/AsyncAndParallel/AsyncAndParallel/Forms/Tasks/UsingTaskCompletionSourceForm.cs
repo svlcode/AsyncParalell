@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AsyncAndParallel.Forms.Tasks
 {
@@ -44,13 +39,17 @@ namespace AsyncAndParallel.Forms.Tasks
             return _tasks.All(t => t.IsCompleted);
         }
 
+        /// <summary>
+        /// Start a task which simulates an asynchronous operation
+        /// </summary>
+        /// <returns></returns>
         private Task<string> ExecuteTaskCompletionSource()
         {
             var tcs = new TaskCompletionSource<string>();
-
-            var rndTime = new Random(DateTime.Now.Millisecond).Next(1000, 5000);
-            var fireAndForget = Task.Delay(rndTime).ContinueWith(a => tcs.SetResult(rndTime.ToString()));
-
+            var firstTask = StartRandomTaskAsync(1000, 5000);
+            // As soon as firstTask is finished it will trigger a second task, called fireAndForget, which will set the result of the
+            // TaskCompletionSource, which acts as a notification when an asynchronous operation has completed.
+            var fireAndForget = firstTask.ContinueWith(a => tcs.SetResult(a.Result.ToString()));
             return tcs.Task;
         }
     }

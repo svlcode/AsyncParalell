@@ -27,13 +27,15 @@ namespace AsyncAndParallel
 
             // This is a shared variable used by both tasks. This could be a potential conflict. 
             // However, since the second task will execute after the first one finishes, the race condition will not occur.
-            
-            Task<string> worker = Task.Run(() =>
+
+            _taskCounter++;
+
+            Task<string> worker = Task.Run(async () =>
             {
-                _taskCounter++;
                 Stopwatch sw = Stopwatch.StartNew();
 
-                StartTimeConsumingTask();
+                await StartRandomTaskAsync(1000,2000);
+                //StartTimeConsumingTask();
 
                 sw.Stop();
                 return $"{sw.ElapsedMilliseconds / 1000.0:#,##0.00}";

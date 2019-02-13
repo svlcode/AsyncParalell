@@ -38,12 +38,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
+            this.btnDeadlock = new System.Windows.Forms.Button();
             this.btnAwaitMultipleTasks = new System.Windows.Forms.Button();
             this.btnTaskCompletionSource = new System.Windows.Forms.Button();
             this.btnBasicAsync = new System.Windows.Forms.Button();
             this.btnUsingTasksContinueWith = new System.Windows.Forms.Button();
             this.btnUsingTasks = new System.Windows.Forms.Button();
-            this.btnDeadlock = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
@@ -81,8 +81,8 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPageThreads);
             this.tabControl.Controls.Add(this.tabPageTasks);
+            this.tabControl.Controls.Add(this.tabPageThreads);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -161,6 +161,16 @@
             this.tabPageTasks.Text = "Tasks";
             this.tabPageTasks.UseVisualStyleBackColor = true;
             // 
+            // btnDeadlock
+            // 
+            this.btnDeadlock.Location = new System.Drawing.Point(185, 6);
+            this.btnDeadlock.Name = "btnDeadlock";
+            this.btnDeadlock.Size = new System.Drawing.Size(171, 23);
+            this.btnDeadlock.TabIndex = 1;
+            this.btnDeadlock.Text = "Deadlock UI Thread";
+            this.btnDeadlock.UseVisualStyleBackColor = true;
+            this.btnDeadlock.Click += new System.EventHandler(this.btnDeadlock_Click);
+            // 
             // btnAwaitMultipleTasks
             // 
             this.btnAwaitMultipleTasks.Location = new System.Drawing.Point(8, 122);
@@ -210,16 +220,6 @@
             this.btnUsingTasks.Text = "Using Tasks";
             this.btnUsingTasks.UseVisualStyleBackColor = true;
             this.btnUsingTasks.Click += new System.EventHandler(this.btnUsingTasks_Click);
-            // 
-            // btnDeadlock
-            // 
-            this.btnDeadlock.Location = new System.Drawing.Point(185, 6);
-            this.btnDeadlock.Name = "btnDeadlock";
-            this.btnDeadlock.Size = new System.Drawing.Size(171, 23);
-            this.btnDeadlock.TabIndex = 1;
-            this.btnDeadlock.Text = "Deadlock UI Thread";
-            this.btnDeadlock.UseVisualStyleBackColor = true;
-            this.btnDeadlock.Click += new System.EventHandler(this.btnDeadlock_Click);
             // 
             // MainForm
             // 
