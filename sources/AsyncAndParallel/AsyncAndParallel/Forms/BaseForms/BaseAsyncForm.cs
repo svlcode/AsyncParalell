@@ -29,6 +29,12 @@ namespace AsyncAndParallel.Forms.BaseForms
             }
         }
 
+        /// <summary>
+        /// Starts a tasks that completes after a time delay between min and max values.
+        /// </summary>
+        /// <param name="minValue">the minimum number of miliseconds after the task completes.</param>
+        /// <param name="maxValue">the maximum number of miliseconds after the task completes.</param>
+        /// <returns>the number of miliseconds in which the task completed..</returns>
         protected async Task<int> StartRandomTaskAsync(int minValue, int maxValue)
         {
             var randomMiliseconds = new Random(DateTime.Now.Millisecond).Next(minValue, maxValue);

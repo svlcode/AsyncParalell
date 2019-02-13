@@ -10,6 +10,9 @@ namespace AsyncAndParallel.Forms.Tasks
             InitializeComponent();
         }
 
+        /// <summary>
+        /// the number of tasks running.
+        /// </summary>
         int _taskCounter = 0;
 
         protected override async Task OnStartAsync()
