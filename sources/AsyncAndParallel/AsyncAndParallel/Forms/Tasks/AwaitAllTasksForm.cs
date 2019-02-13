@@ -26,6 +26,7 @@ namespace AsyncAndParallel.Forms.Tasks
                 tasks.Add(task);
             }
             
+            // awaits for all tasks to finish.
             await Task.WhenAll(tasks);
 
             sw.Stop();

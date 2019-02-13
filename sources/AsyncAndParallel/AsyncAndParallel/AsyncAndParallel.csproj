@@ -52,6 +52,12 @@
     <Compile Include="Forms\BaseForms\BaseAsyncForm.Designer.cs">
       <DependentUpon>BaseAsyncForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\AwaitAnyTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAnyTaskForm.Designer.cs">
+      <DependentUpon>AwaitAnyTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\BasicAsyncForm.cs">
       <SubType>Form</SubType>
     </Compile>
