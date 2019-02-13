@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AsyncAndParallel.Forms.Tasks
@@ -15,18 +17,22 @@ namespace AsyncAndParallel.Forms.Tasks
             StartProgressBar();
 
             Stopwatch sw = Stopwatch.StartNew();
-            var t1 = StartRandomTaskAsync(1000, 3000);
-            var t2 = StartRandomTaskAsync(1000, 3000);
-            var t3 = StartRandomTaskAsync(1000, 3000);
 
-            await Task.WhenAll(t1, t2, t3);
+            List<Task> tasks = new List<Task>();
+            for (int i = 0; i < 3; i++)
+            {
+                var task = StartRandomTaskAsync(1000, 3000);
+                listBoxResult.Items.Add($"Started task {task.Id}.");
+                tasks.Add(task);
+            }
+            
+            await Task.WhenAll(tasks);
 
             sw.Stop();
-            listBoxResult.Items.Add($"task {t1.Id} finished in {t1.Result} milliseconds.");
-            listBoxResult.Items.Add($"task {t2.Id} finished in {t2.Result} milliseconds.");
-            listBoxResult.Items.Add($"task {t3.Id} finished in {t3.Result} milliseconds.");
+            string taskIds = "";
+            tasks.ForEach((t) => taskIds += t.Id + " ");
 
-            listBoxResult.Items.Add($"All tasks finished {sw.ElapsedMilliseconds} milliseconds.");
+            listBoxResult.Items.Add($"All tasks ({taskIds}) finished in {sw.ElapsedMilliseconds} milliseconds.");
 
             StopProgressBar();
         }
