@@ -78,11 +78,29 @@
     <Compile Include="Forms\Tasks\AwaitAllTasksForm.Designer.cs">
       <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\ContinueWhenAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\ContinueWhenAllForm.Designer.cs">
+      <DependentUpon>ContinueWhenAllForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\DeadlockForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Tasks\DeadlockForm.Designer.cs">
       <DependentUpon>DeadlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\FireAndForgetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\FireAndForgetForm.Designer.cs">
+      <DependentUpon>FireAndForgetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\HandlingExceptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\HandlingExceptionsForm.Designer.cs">
+      <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
       <SubType>Form</SubType>
@@ -173,6 +191,12 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\AwaitAllOneByOneForm.resx">
+      <DependentUpon>AwaitAllOneByOneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\AwaitAnyTaskForm.resx">
+      <DependentUpon>AwaitAnyTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\BasicAsyncForm.resx">
       <DependentUpon>BasicAsyncForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\DeadlockForm.resx">
       <DependentUpon>DeadlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\FireAndForgetForm.resx">
+      <DependentUpon>FireAndForgetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
       <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>

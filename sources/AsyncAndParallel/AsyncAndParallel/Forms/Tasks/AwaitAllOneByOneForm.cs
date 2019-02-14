@@ -17,7 +17,7 @@ namespace AsyncAndParallel.Forms.Tasks
             List<Task<int>> tasks = new List<Task<int>>();
             for (int i = 0; i < Number; i++)
             {
-                var task = StartRandomTaskAsync(1000, 4000);
+                var task = StartRandomTaskAsync(1000, 6000);
                 listBoxResult.Items.Add($"Started task {task.Id}.");
                 tasks.Add(task);
             }

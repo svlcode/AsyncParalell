@@ -1,6 +1,6 @@
 ﻿namespace AsyncAndParallel.Forms.Tasks
 {
-    partial class AwaitAnyTaskForm
+    partial class HandlingExceptionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Size = new System.Drawing.Size(643, 23);
-            // 
-            // listBoxResult
-            // 
-            this.listBoxResult.Size = new System.Drawing.Size(776, 368);
-            // 
-            // AwaitAnyTaskForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "AwaitAnyTaskForm";
-            this.Text = "AwaitAnyTaskForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.Text = "HandlingExceptionsForm";
         }
 
         #endregion

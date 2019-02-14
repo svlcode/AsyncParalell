@@ -81,5 +81,20 @@ namespace AsyncAndParallel
         {
             ShowForm<AwaitAllOneByOneForm>();
         }
+
+        private void btnFireAndForget_Click(object sender, EventArgs e)
+        {
+            ShowForm<FireAndForgetForm>();
+        }
+
+        private void btnContinueWhenAll_Click(object sender, EventArgs e)
+        {
+            ShowForm<ContinueWhenAllForm>();
+        }
+
+        private void btnHandlingExceptions_Click(object sender, EventArgs e)
+        {
+            ShowForm<HandlingExceptionsForm>();
+        }
     }
 }

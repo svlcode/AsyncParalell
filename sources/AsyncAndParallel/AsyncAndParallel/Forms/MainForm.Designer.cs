@@ -46,6 +46,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFireAndForget = new System.Windows.Forms.Button();
+            this.btnContinueWhenAll = new System.Windows.Forms.Button();
+            this.btnHandlingExceptions = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
@@ -95,6 +98,9 @@
             // tabPageTasks
             // 
             this.tabPageTasks.Controls.Add(this.btnDeadlock);
+            this.tabPageTasks.Controls.Add(this.btnHandlingExceptions);
+            this.tabPageTasks.Controls.Add(this.btnContinueWhenAll);
+            this.tabPageTasks.Controls.Add(this.btnFireAndForget);
             this.tabPageTasks.Controls.Add(this.btnAwaitAllOneByOne);
             this.tabPageTasks.Controls.Add(this.btnAwaitAnyTask);
             this.tabPageTasks.Controls.Add(this.btnAwaitMultipleTasks);
@@ -245,6 +251,36 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "This will block the current UI Thread.";
             // 
+            // btnFireAndForget
+            // 
+            this.btnFireAndForget.Location = new System.Drawing.Point(8, 209);
+            this.btnFireAndForget.Name = "btnFireAndForget";
+            this.btnFireAndForget.Size = new System.Drawing.Size(171, 23);
+            this.btnFireAndForget.TabIndex = 1;
+            this.btnFireAndForget.Text = "Fire And Forget";
+            this.btnFireAndForget.UseVisualStyleBackColor = true;
+            this.btnFireAndForget.Click += new System.EventHandler(this.btnFireAndForget_Click);
+            // 
+            // btnContinueWhenAll
+            // 
+            this.btnContinueWhenAll.Location = new System.Drawing.Point(8, 238);
+            this.btnContinueWhenAll.Name = "btnContinueWhenAll";
+            this.btnContinueWhenAll.Size = new System.Drawing.Size(171, 23);
+            this.btnContinueWhenAll.TabIndex = 1;
+            this.btnContinueWhenAll.Text = "Continue When All";
+            this.btnContinueWhenAll.UseVisualStyleBackColor = true;
+            this.btnContinueWhenAll.Click += new System.EventHandler(this.btnContinueWhenAll_Click);
+            // 
+            // btnHandlingExceptions
+            // 
+            this.btnHandlingExceptions.Location = new System.Drawing.Point(8, 267);
+            this.btnHandlingExceptions.Name = "btnHandlingExceptions";
+            this.btnHandlingExceptions.Size = new System.Drawing.Size(171, 23);
+            this.btnHandlingExceptions.TabIndex = 1;
+            this.btnHandlingExceptions.Text = "Handling Exceptions";
+            this.btnHandlingExceptions.UseVisualStyleBackColor = true;
+            this.btnHandlingExceptions.Click += new System.EventHandler(this.btnHandlingExceptions_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,5 +316,8 @@
         private System.Windows.Forms.Button btnDeadlock;
         private System.Windows.Forms.Button btnAwaitAnyTask;
         private System.Windows.Forms.Button btnAwaitAllOneByOne;
+        private System.Windows.Forms.Button btnFireAndForget;
+        private System.Windows.Forms.Button btnContinueWhenAll;
+        private System.Windows.Forms.Button btnHandlingExceptions;
     }
 }
