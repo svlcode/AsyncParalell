@@ -96,5 +96,10 @@ namespace AsyncAndParallel
         {
             ShowForm<HandlingExceptionsForm>();
         }
+
+        private void btnCancelTask_Click(object sender, EventArgs e)
+        {
+            ShowForm<CancelTaskForm>();
+        }
     }
 }
