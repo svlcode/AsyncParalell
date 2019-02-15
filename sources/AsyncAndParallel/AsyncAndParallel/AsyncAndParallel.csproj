@@ -114,6 +114,12 @@
     <Compile Include="Forms\Tasks\HandlingExceptionsForm.Designer.cs">
       <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\PassingArgumentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\PassingArgumentsForm.Designer.cs">
+      <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     </Compile>
     <Compile Include="Forms\Threads\ThreadCallbackForm.Designer.cs">
       <DependentUpon>ThreadCallbackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\ResponsiveUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\ResponsiveUpdateForm.Designer.cs">
+      <DependentUpon>ResponsiveUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateUI\UpdateUIUsingDelegateForm.cs">
       <SubType>Form</SubType>
@@ -250,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Threads\BackgroundForegroundThreadsForm.resx">
       <DependentUpon>BackgroundForegroundThreadsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateUI\ResponsiveUpdateForm.resx">
+      <DependentUpon>ResponsiveUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateUI\UpdateUIUsingDelegateForm.resx">
       <DependentUpon>UpdateUIUsingDelegateForm.cs</DependentUpon>

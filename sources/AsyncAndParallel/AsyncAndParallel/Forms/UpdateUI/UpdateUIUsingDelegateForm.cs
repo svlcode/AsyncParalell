@@ -32,6 +32,8 @@ namespace AsyncAndParallel.Forms.UpdateUI
 
                     AddLine($"Started task {taskId}");
                 });
+
+                
             }
         }
 

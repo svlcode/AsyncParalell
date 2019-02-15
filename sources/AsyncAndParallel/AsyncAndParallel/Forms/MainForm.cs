@@ -117,5 +117,10 @@ namespace AsyncAndParallel
         {
             ShowForm<UpdateUIUsingMethodInvokerForm>();
         }
+
+        private void btnResponsiveUpdate_Click(object sender, EventArgs e)
+        {
+            ShowForm<ResponsiveUpdateForm>();
+        }
     }
 }
