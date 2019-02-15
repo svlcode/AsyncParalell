@@ -1,6 +1,6 @@
-﻿namespace AsyncAndParallel.Forms.Tasks
+﻿namespace AsyncAndParallel.Forms.UpdateUI
 {
-    partial class ContinueWhenAllForm
+    partial class UpdateUIUsingMethodInvokerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,13 +38,13 @@
             // 
             this.listBoxResult.Size = new System.Drawing.Size(776, 368);
             // 
-            // ContinueWhenAllForm
+            // UpdateUIUsingMethodInvokerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "ContinueWhenAllForm";
-            this.Text = "ContinueWhenAllForm";
+            this.Name = "UpdateUIUsingMethodInvokerForm";
+            this.Text = "UpdateUIUsingMethodInvokerForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

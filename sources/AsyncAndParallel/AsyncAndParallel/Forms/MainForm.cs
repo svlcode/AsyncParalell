@@ -4,6 +4,7 @@ using AsyncAndParallel.DownloadPDF;
 using AsyncAndParallel.Forms;
 using AsyncAndParallel.Forms.Tasks;
 using AsyncAndParallel.Forms.Threads;
+using AsyncAndParallel.Forms.UpdateUI;
 
 namespace AsyncAndParallel
 {
@@ -100,6 +101,21 @@ namespace AsyncAndParallel
         private void btnCancelTask_Click(object sender, EventArgs e)
         {
             ShowForm<CancelTaskForm>();
+        }
+
+        private void btnBewareOfClosures_Click(object sender, EventArgs e)
+        {
+            ShowForm<BewareOfClosuresForm>();
+        }
+
+        private void btnUsingDelegate_Click(object sender, EventArgs e)
+        {
+            ShowForm<UpdateUIUsingDelegateForm>();
+        }
+
+        private void btnUpdateUsingMethodInvoker_Click(object sender, EventArgs e)
+        {
+            ShowForm<UpdateUIUsingMethodInvokerForm>();
         }
     }
 }

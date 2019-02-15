@@ -34,6 +34,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
             this.btnDeadlock = new System.Windows.Forms.Button();
+            this.btnCancelTask = new System.Windows.Forms.Button();
             this.btnHandlingExceptions = new System.Windows.Forms.Button();
             this.btnContinueWhenAll = new System.Windows.Forms.Button();
             this.btnFireAndForget = new System.Windows.Forms.Button();
@@ -49,10 +50,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelTask = new System.Windows.Forms.Button();
+            this.btnBewareOfClosures = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnUsingDelegate = new System.Windows.Forms.Button();
+            this.btnUpdateUsingMethodInvoker = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnJoinThread
@@ -89,6 +94,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPageTasks);
             this.tabControl.Controls.Add(this.tabPageThreads);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -98,6 +104,7 @@
             // 
             // tabPageTasks
             // 
+            this.tabPageTasks.Controls.Add(this.btnBewareOfClosures);
             this.tabPageTasks.Controls.Add(this.btnDeadlock);
             this.tabPageTasks.Controls.Add(this.btnCancelTask);
             this.tabPageTasks.Controls.Add(this.btnHandlingExceptions);
@@ -127,6 +134,16 @@
             this.btnDeadlock.Text = "Deadlock UI Thread";
             this.btnDeadlock.UseVisualStyleBackColor = true;
             this.btnDeadlock.Click += new System.EventHandler(this.btnDeadlock_Click);
+            // 
+            // btnCancelTask
+            // 
+            this.btnCancelTask.Location = new System.Drawing.Point(8, 296);
+            this.btnCancelTask.Name = "btnCancelTask";
+            this.btnCancelTask.Size = new System.Drawing.Size(171, 23);
+            this.btnCancelTask.TabIndex = 1;
+            this.btnCancelTask.Text = "Cancel Task";
+            this.btnCancelTask.UseVisualStyleBackColor = true;
+            this.btnCancelTask.Click += new System.EventHandler(this.btnCancelTask_Click);
             // 
             // btnHandlingExceptions
             // 
@@ -283,15 +300,47 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "This will block the current UI Thread.";
             // 
-            // btnCancelTask
+            // btnBewareOfClosures
             // 
-            this.btnCancelTask.Location = new System.Drawing.Point(8, 296);
-            this.btnCancelTask.Name = "btnCancelTask";
-            this.btnCancelTask.Size = new System.Drawing.Size(171, 23);
-            this.btnCancelTask.TabIndex = 1;
-            this.btnCancelTask.Text = "Cancel Task";
-            this.btnCancelTask.UseVisualStyleBackColor = true;
-            this.btnCancelTask.Click += new System.EventHandler(this.btnCancelTask_Click);
+            this.btnBewareOfClosures.Location = new System.Drawing.Point(185, 35);
+            this.btnBewareOfClosures.Name = "btnBewareOfClosures";
+            this.btnBewareOfClosures.Size = new System.Drawing.Size(171, 23);
+            this.btnBewareOfClosures.TabIndex = 1;
+            this.btnBewareOfClosures.Text = "Beware of Closures";
+            this.btnBewareOfClosures.UseVisualStyleBackColor = true;
+            this.btnBewareOfClosures.Click += new System.EventHandler(this.btnBewareOfClosures_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnUpdateUsingMethodInvoker);
+            this.tabPage1.Controls.Add(this.btnUsingDelegate);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(716, 325);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "UI";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnUsingDelegate
+            // 
+            this.btnUsingDelegate.Location = new System.Drawing.Point(8, 6);
+            this.btnUsingDelegate.Name = "btnUsingDelegate";
+            this.btnUsingDelegate.Size = new System.Drawing.Size(171, 23);
+            this.btnUsingDelegate.TabIndex = 2;
+            this.btnUsingDelegate.Text = "Using Delegate";
+            this.btnUsingDelegate.UseVisualStyleBackColor = true;
+            this.btnUsingDelegate.Click += new System.EventHandler(this.btnUsingDelegate_Click);
+            // 
+            // btnUpdateUsingMethodInvoker
+            // 
+            this.btnUpdateUsingMethodInvoker.Location = new System.Drawing.Point(8, 35);
+            this.btnUpdateUsingMethodInvoker.Name = "btnUpdateUsingMethodInvoker";
+            this.btnUpdateUsingMethodInvoker.Size = new System.Drawing.Size(171, 23);
+            this.btnUpdateUsingMethodInvoker.TabIndex = 2;
+            this.btnUpdateUsingMethodInvoker.Text = "Using MethodInvoker";
+            this.btnUpdateUsingMethodInvoker.UseVisualStyleBackColor = true;
+            this.btnUpdateUsingMethodInvoker.Click += new System.EventHandler(this.btnUpdateUsingMethodInvoker_Click);
             // 
             // MainForm
             // 
@@ -305,6 +354,7 @@
             this.tabPageTasks.ResumeLayout(false);
             this.tabPageThreads.ResumeLayout(false);
             this.tabPageThreads.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -332,5 +382,9 @@
         private System.Windows.Forms.Button btnContinueWhenAll;
         private System.Windows.Forms.Button btnHandlingExceptions;
         private System.Windows.Forms.Button btnCancelTask;
+        private System.Windows.Forms.Button btnBewareOfClosures;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnUsingDelegate;
+        private System.Windows.Forms.Button btnUpdateUsingMethodInvoker;
     }
 }

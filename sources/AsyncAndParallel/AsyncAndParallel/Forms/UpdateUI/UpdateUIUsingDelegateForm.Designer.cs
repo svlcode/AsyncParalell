@@ -1,6 +1,6 @@
-﻿namespace AsyncAndParallel.Forms.Tasks
+﻿namespace AsyncAndParallel.Forms.UpdateUI
 {
-    partial class ContinueWhenAllForm
+    partial class UpdateUIUsingDelegateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,23 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Size = new System.Drawing.Size(643, 23);
-            // 
-            // listBoxResult
-            // 
-            this.listBoxResult.Size = new System.Drawing.Size(776, 368);
-            // 
-            // ContinueWhenAllForm
+            // UpdateUiThreadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "ContinueWhenAllForm";
-            this.Text = "ContinueWhenAllForm";
+            this.Name = "UpdateUiThreadForm";
+            this.Text = "UpdateUiThreadForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
