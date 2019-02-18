@@ -122,5 +122,10 @@ namespace AsyncAndParallel
         {
             ShowForm<ResponsiveUpdateForm>();
         }
+
+        private void btnPassingArguments_Click(object sender, EventArgs e)
+        {
+            ShowForm<PassingArgumentsForm>();
+        }
     }
 }

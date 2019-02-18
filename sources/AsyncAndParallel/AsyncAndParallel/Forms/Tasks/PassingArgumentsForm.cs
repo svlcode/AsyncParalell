@@ -17,15 +17,22 @@ namespace AsyncAndParallel.Forms.Tasks
             InitializeComponent();
         }
 
+        // If value may change, pass task parameters instead of using closures.
         protected override async Task OnStartAsync()
         {
             for (int i = 0; i < Number; i++)
             {
-                var task = Task.Factory.StartNew<int>((arg) =>
+                await Task.Factory.StartNew((arg) =>
                 {
-                },
-                i);
+                    int taskId = (int)arg;
+                    AddLine($"started task: {taskId}");
+                },i);
             }
+        }
+
+        private void AddLine(string text)
+        {
+            this.listBoxResult.Invoke(new MethodInvoker(() => { this.listBoxResult.Items.Add(text); }));
         }
     }
 }

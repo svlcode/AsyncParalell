@@ -34,7 +34,6 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
             this.btnBewareOfClosures = new System.Windows.Forms.Button();
-            this.btnDeadlock = new System.Windows.Forms.Button();
             this.btnCancelTask = new System.Windows.Forms.Button();
             this.btnHandlingExceptions = new System.Windows.Forms.Button();
             this.btnContinueWhenAll = new System.Windows.Forms.Button();
@@ -52,9 +51,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnResponsiveUpdate = new System.Windows.Forms.Button();
             this.btnUpdateUsingMethodInvoker = new System.Windows.Forms.Button();
             this.btnUsingDelegate = new System.Windows.Forms.Button();
-            this.btnResponsiveUpdate = new System.Windows.Forms.Button();
+            this.btnPassingArguments = new System.Windows.Forms.Button();
+            this.btnDeadlock = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
@@ -105,8 +106,8 @@
             // 
             // tabPageTasks
             // 
+            this.tabPageTasks.Controls.Add(this.btnPassingArguments);
             this.tabPageTasks.Controls.Add(this.btnBewareOfClosures);
-            this.tabPageTasks.Controls.Add(this.btnDeadlock);
             this.tabPageTasks.Controls.Add(this.btnCancelTask);
             this.tabPageTasks.Controls.Add(this.btnHandlingExceptions);
             this.tabPageTasks.Controls.Add(this.btnContinueWhenAll);
@@ -128,23 +129,13 @@
             // 
             // btnBewareOfClosures
             // 
-            this.btnBewareOfClosures.Location = new System.Drawing.Point(185, 35);
+            this.btnBewareOfClosures.Location = new System.Drawing.Point(185, 6);
             this.btnBewareOfClosures.Name = "btnBewareOfClosures";
             this.btnBewareOfClosures.Size = new System.Drawing.Size(171, 23);
             this.btnBewareOfClosures.TabIndex = 1;
             this.btnBewareOfClosures.Text = "Beware of Closures";
             this.btnBewareOfClosures.UseVisualStyleBackColor = true;
             this.btnBewareOfClosures.Click += new System.EventHandler(this.btnBewareOfClosures_Click);
-            // 
-            // btnDeadlock
-            // 
-            this.btnDeadlock.Location = new System.Drawing.Point(185, 6);
-            this.btnDeadlock.Name = "btnDeadlock";
-            this.btnDeadlock.Size = new System.Drawing.Size(171, 23);
-            this.btnDeadlock.TabIndex = 1;
-            this.btnDeadlock.Text = "Deadlock UI Thread";
-            this.btnDeadlock.UseVisualStyleBackColor = true;
-            this.btnDeadlock.Click += new System.EventHandler(this.btnDeadlock_Click);
             // 
             // btnCancelTask
             // 
@@ -313,6 +304,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnDeadlock);
             this.tabPage1.Controls.Add(this.btnResponsiveUpdate);
             this.tabPage1.Controls.Add(this.btnUpdateUsingMethodInvoker);
             this.tabPage1.Controls.Add(this.btnUsingDelegate);
@@ -324,9 +316,19 @@
             this.tabPage1.Text = "UI";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnResponsiveUpdate
+            // 
+            this.btnResponsiveUpdate.Location = new System.Drawing.Point(6, 93);
+            this.btnResponsiveUpdate.Name = "btnResponsiveUpdate";
+            this.btnResponsiveUpdate.Size = new System.Drawing.Size(171, 23);
+            this.btnResponsiveUpdate.TabIndex = 2;
+            this.btnResponsiveUpdate.Text = "Responsive Update UI";
+            this.btnResponsiveUpdate.UseVisualStyleBackColor = true;
+            this.btnResponsiveUpdate.Click += new System.EventHandler(this.btnResponsiveUpdate_Click);
+            // 
             // btnUpdateUsingMethodInvoker
             // 
-            this.btnUpdateUsingMethodInvoker.Location = new System.Drawing.Point(8, 35);
+            this.btnUpdateUsingMethodInvoker.Location = new System.Drawing.Point(6, 64);
             this.btnUpdateUsingMethodInvoker.Name = "btnUpdateUsingMethodInvoker";
             this.btnUpdateUsingMethodInvoker.Size = new System.Drawing.Size(171, 23);
             this.btnUpdateUsingMethodInvoker.TabIndex = 2;
@@ -336,7 +338,7 @@
             // 
             // btnUsingDelegate
             // 
-            this.btnUsingDelegate.Location = new System.Drawing.Point(8, 6);
+            this.btnUsingDelegate.Location = new System.Drawing.Point(6, 35);
             this.btnUsingDelegate.Name = "btnUsingDelegate";
             this.btnUsingDelegate.Size = new System.Drawing.Size(171, 23);
             this.btnUsingDelegate.TabIndex = 2;
@@ -344,15 +346,24 @@
             this.btnUsingDelegate.UseVisualStyleBackColor = true;
             this.btnUsingDelegate.Click += new System.EventHandler(this.btnUsingDelegate_Click);
             // 
-            // btnResponsiveUpdate
+            // btnPassingArguments
             // 
-            this.btnResponsiveUpdate.Location = new System.Drawing.Point(8, 64);
-            this.btnResponsiveUpdate.Name = "btnResponsiveUpdate";
-            this.btnResponsiveUpdate.Size = new System.Drawing.Size(171, 23);
-            this.btnResponsiveUpdate.TabIndex = 2;
-            this.btnResponsiveUpdate.Text = "Responsive Update UI";
-            this.btnResponsiveUpdate.UseVisualStyleBackColor = true;
-            this.btnResponsiveUpdate.Click += new System.EventHandler(this.btnResponsiveUpdate_Click);
+            this.btnPassingArguments.Location = new System.Drawing.Point(185, 35);
+            this.btnPassingArguments.Name = "btnPassingArguments";
+            this.btnPassingArguments.Size = new System.Drawing.Size(171, 23);
+            this.btnPassingArguments.TabIndex = 1;
+            this.btnPassingArguments.Text = "Passing Arguments";
+            this.btnPassingArguments.UseVisualStyleBackColor = true;
+            this.btnPassingArguments.Click += new System.EventHandler(this.btnPassingArguments_Click);
+            // 
+            // btnDeadlock
+            // 
+            this.btnDeadlock.Location = new System.Drawing.Point(6, 6);
+            this.btnDeadlock.Name = "btnDeadlock";
+            this.btnDeadlock.Size = new System.Drawing.Size(171, 23);
+            this.btnDeadlock.TabIndex = 3;
+            this.btnDeadlock.Text = "Deadlock UI Thread";
+            this.btnDeadlock.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -387,7 +398,6 @@
         private System.Windows.Forms.Button btnBasicAsync;
         private System.Windows.Forms.Button btnTaskCompletionSource;
         private System.Windows.Forms.Button btnAwaitMultipleTasks;
-        private System.Windows.Forms.Button btnDeadlock;
         private System.Windows.Forms.Button btnAwaitAnyTask;
         private System.Windows.Forms.Button btnAwaitAllOneByOne;
         private System.Windows.Forms.Button btnFireAndForget;
@@ -399,5 +409,7 @@
         private System.Windows.Forms.Button btnUsingDelegate;
         private System.Windows.Forms.Button btnUpdateUsingMethodInvoker;
         private System.Windows.Forms.Button btnResponsiveUpdate;
+        private System.Windows.Forms.Button btnPassingArguments;
+        private System.Windows.Forms.Button btnDeadlock;
     }
 }

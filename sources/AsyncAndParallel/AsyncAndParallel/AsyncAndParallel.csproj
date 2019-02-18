@@ -254,6 +254,9 @@
     <EmbeddedResource Include="Forms\Tasks\HandlingExceptionsForm.resx">
       <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\PassingArgumentsForm.resx">
+      <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
       <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
     </EmbeddedResource>
