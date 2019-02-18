@@ -32,7 +32,7 @@ namespace AsyncAndParallel.Forms.Tasks
 
         private void AddLine(string text)
         {
-            this.listBoxResult.Invoke(new MethodInvoker(() => { this.listBoxResult.Items.Add(text); }));
+            this.listBoxResult.Invoke(new Action(() => { this.listBoxResult.Items.Add(text); }));
         }
     }
 }
