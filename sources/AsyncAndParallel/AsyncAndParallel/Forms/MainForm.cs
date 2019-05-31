@@ -23,14 +23,10 @@ namespace AsyncAndParallel
             }
         }
 
+        #region Threads
         private void btnJoinThread_Click(object sender, EventArgs e)
         {
             ShowForm<JoinThreadForm>();
-        }
-
-        private void btnAbortThreads_Click(object sender, EventArgs e)
-        {
-            ShowForm<AbortThreadForm>();
         }
 
         private void btnThreadCallback_Click(object sender, EventArgs e)
@@ -38,10 +34,16 @@ namespace AsyncAndParallel
             ShowForm<ThreadCallbackForm>();
         }
 
+        private void btnAbortThreads_Click(object sender, EventArgs e)
+        {
+            ShowForm<AbortThreadForm>();
+        }
+
         private void btnBackgrounForeground_Click(object sender, EventArgs e)
         {
             ShowForm<BackgroundForegroundThreadsForm>();
-        }
+        } 
+        #endregion
 
         private void btnUsingTasks_Click(object sender, EventArgs e)
         {
