@@ -85,8 +85,6 @@ namespace AsyncAndParallel
             ShowForm<DeadlockForm>();
         }
 
-       
-
         private void btnFireAndForget_Click(object sender, EventArgs e)
         {
             ShowForm<FireAndForgetForm>();
