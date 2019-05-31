@@ -17,7 +17,7 @@ namespace AsyncAndParallel.Forms.Tasks
 
         protected override async Task OnStartAsync()
         {
-            if(AllTasksCompleted())
+            if(_tasks.All(t => t.IsCompleted))
                 StartProgressBar();
 
             var task = ExecuteTaskCompletionSource();
@@ -30,14 +30,10 @@ namespace AsyncAndParallel.Forms.Tasks
 
             listBoxResult.Items.Add($"Task {task.Id} completed in {result} milliseconds.");
 
-            if (AllTasksCompleted())
+            if (_tasks.All(t => t.IsCompleted))
                 StopProgressBar();
         }
 
-        private bool AllTasksCompleted()
-        {
-            return _tasks.All(t => t.IsCompleted);
-        }
 
         /// <summary>
         /// Start a task which simulates an asynchronous operation
