@@ -14,7 +14,7 @@ namespace AsyncAndParallel.Forms.Tasks
 
         /// <summary>
         /// All exceptions must be "observed" in order not to be re-thrown when the a task is garbage-collected.
-        /// Use one of the following to observe an exception thrown in a task:
+        /// Use one of the following patterns to observe an exception thrown in a task:
         /// 1. call .Wait or touch .Result - exception is re-thrown at this point, or
         /// 2. call Task.WaitAll - exception(s) re-thrown at this point, or
         /// 3. touch task's .Exception property *after* task has completed, or
@@ -28,12 +28,23 @@ namespace AsyncAndParallel.Forms.Tasks
             tasks.Add(Task.Run(() => { int s = 0; s = 4 / s; }));
             tasks.Add(Task.Run(() => { throw new ArgumentNullException(); }));
             tasks.Add(Task.Run(() => { throw new FormatException(); }));
+            tasks.Add(Task.Run(() =>
+            {
+                Task.Run(() =>
+                {
+                    throw new NotImplementedException();
+                }).Wait();
+            }));
             tasks.Add(Task.Run(() => 
-                                {   Task.Run(() => 
-                                            {
-                                                throw new NotImplementedException();
-                                            }).Wait();
-                                }));
+            {
+                Task.Run(() =>  
+                {
+                    Task.Run(() => 
+                    {
+                        throw new ArgumentNullException("test");
+                    }).Wait();
+                }).Wait();
+            }));
 
             // In contrast to 'Task.WaitAll', 'await Task.WhenAll' is non-blocking,
             // but it throws only the first Exception
@@ -44,9 +55,9 @@ namespace AsyncAndParallel.Forms.Tasks
             }
             catch (AggregateException ae)
             {
-                ae.Flatten();
+                var newAe = ae.Flatten();
                 string errors = "";
-                foreach (var exception in ae.InnerExceptions)
+                foreach (var exception in newAe.InnerExceptions)
                 {
                     errors += exception.Message + Environment.NewLine;
                 }

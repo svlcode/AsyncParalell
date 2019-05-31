@@ -70,11 +70,6 @@ namespace AsyncAndParallel
             ShowForm<AwaitAllTasksForm>();
         }
 
-        private void btnDeadlock_Click(object sender, EventArgs e)
-        {
-            ShowForm<DeadlockForm>();
-        }
-
         private void btnAwaitAnyTask_Click(object sender, EventArgs e)
         {
             ShowForm<AwaitAnyTaskForm>();
@@ -84,6 +79,13 @@ namespace AsyncAndParallel
         {
             ShowForm<AwaitAllOneByOneForm>();
         }
+
+        private void btnDeadlock_Click(object sender, EventArgs e)
+        {
+            ShowForm<DeadlockForm>();
+        }
+
+       
 
         private void btnFireAndForget_Click(object sender, EventArgs e)
         {
