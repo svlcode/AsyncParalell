@@ -16,7 +16,7 @@ namespace AsyncAndParallel.Forms.Tasks
             for (int i = 0; i < Number; i++)
             {
                 // the task will make a closure over the variable 'i'
-                // this is not the propery way of passing data to a task.
+                // this is not the correct way of passing data to a task.
                 Task.Run(() =>
                 {
                     // taskId will have the same value for all tasks due to the fact 
