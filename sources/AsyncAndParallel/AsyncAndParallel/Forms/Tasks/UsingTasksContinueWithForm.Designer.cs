@@ -30,14 +30,28 @@
         {
             this.SuspendLayout();
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(93, 12);
+            this.progressBar1.Size = new System.Drawing.Size(493, 23);
+            // 
+            // txtNumber
+            // 
+            this.txtNumber.Visible = false;
+            // 
+            // listBoxResult
+            // 
+            this.listBoxResult.Size = new System.Drawing.Size(574, 342);
+            // 
             // UsingTasksContinueWithForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(598, 400);
             this.Name = "UsingTasksContinueWithForm";
             this.Text = "UsingTasksContinueWithForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

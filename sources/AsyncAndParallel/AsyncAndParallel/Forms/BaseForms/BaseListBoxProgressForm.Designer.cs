@@ -73,6 +73,6 @@
 
         #endregion
         protected System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox txtNumber;
+        protected System.Windows.Forms.TextBox txtNumber;
     }
 }
