@@ -110,6 +110,12 @@ namespace AsyncAndParallel
             ShowForm<BewareOfClosuresForm>();
         }
 
+        private void btnPassingArguments_Click(object sender, EventArgs e)
+        {
+            ShowForm<PassingArgumentsForm>();
+        }
+
+        #region UI
         private void btnUsingDelegate_Click(object sender, EventArgs e)
         {
             ShowForm<UpdateUIUsingDelegateForm>();
@@ -125,9 +131,11 @@ namespace AsyncAndParallel
             ShowForm<ResponsiveUpdateForm>();
         }
 
-        private void btnPassingArguments_Click(object sender, EventArgs e)
+        #endregion
+
+        private void btnLongRunning_Click(object sender, EventArgs e)
         {
-            ShowForm<PassingArgumentsForm>();
+            ShowForm<LongRunningOperationsForm>();
         }
     }
 }

@@ -114,6 +114,12 @@
     <Compile Include="Forms\Tasks\HandlingExceptionsForm.Designer.cs">
       <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\LongRunningOperationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\LongRunningOperationsForm.Designer.cs">
+      <DependentUpon>LongRunningOperationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\PassingArgumentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\HandlingExceptionsForm.resx">
       <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\LongRunningOperationsForm.resx">
+      <DependentUpon>LongRunningOperationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\PassingArgumentsForm.resx">
       <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
