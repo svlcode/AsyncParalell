@@ -1,6 +1,6 @@
-﻿namespace AsyncAndParallel
+﻿namespace AsyncAndParallel.Forms.Tasks
 {
-    partial class UsingTasksContinueWithForm
+    partial class UsingTaskCompletionSourceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,26 +32,20 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(93, 12);
-            this.progressBar1.Size = new System.Drawing.Size(493, 23);
-            // 
-            // txtNumber
-            // 
-            this.txtNumber.Visible = false;
+            this.progressBar1.Size = new System.Drawing.Size(695, 23);
             // 
             // listBoxResult
             // 
-            this.listBoxResult.Size = new System.Drawing.Size(574, 342);
+            this.listBoxResult.Size = new System.Drawing.Size(776, 381);
             // 
-            // UsingTasksContinueWithForm
+            // UsingTaskCompletionSourceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 400);
-            this.Name = "UsingTasksContinueWithForm";
-            this.Text = "UsingTasksContinueWithForm";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "UsingTaskCompletionSourceForm";
+            this.Text = "UsingTaskCompletionSourceForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

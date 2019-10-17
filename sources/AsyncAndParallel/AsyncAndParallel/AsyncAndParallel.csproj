@@ -34,7 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,22 +48,112 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BaseForms\BaseAsyncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForms\BaseAsyncForm.Designer.cs">
+      <DependentUpon>BaseAsyncForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAllOneByOneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAllOneByOneForm.Designer.cs">
+      <DependentUpon>AwaitAllOneByOneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAnyTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAnyTaskForm.Designer.cs">
+      <DependentUpon>AwaitAnyTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\BasicAsyncForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\BasicAsyncForm.Designer.cs">
+      <DependentUpon>BasicAsyncForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAllTasksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\AwaitAllTasksForm.Designer.cs">
+      <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\BewareOfClosuresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\BewareOfClosuresForm.Designer.cs">
+      <DependentUpon>BewareOfClosuresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\CancelTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\CancelTaskForm.Designer.cs">
+      <DependentUpon>CancelTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\ContinueWhenAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\ContinueWhenAllForm.Designer.cs">
+      <DependentUpon>ContinueWhenAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\DeadlockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\DeadlockForm.Designer.cs">
+      <DependentUpon>DeadlockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\FireAndForgetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\FireAndForgetForm.Designer.cs">
+      <DependentUpon>FireAndForgetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\HandlingExceptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\HandlingExceptionsForm.Designer.cs">
+      <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\LongRunningOperationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\LongRunningOperationsForm.Designer.cs">
+      <DependentUpon>LongRunningOperationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\PassingArgumentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\PassingArgumentsForm.Designer.cs">
+      <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\PushPullForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\PushPullForm.Designer.cs">
+      <DependentUpon>PushPullForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.Designer.cs">
+      <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Threads\AbortThreadForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Threads\AbortThreadForm.Designer.cs">
       <DependentUpon>AbortThreadForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxForm.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxForm.Designer.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxForm.Designer.cs">
       <DependentUpon>BaseListBoxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxProgressForm.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HelperForms\BaseListBoxProgressForm.Designer.cs">
+    <Compile Include="Forms\BaseForms\BaseListBoxProgressForm.Designer.cs">
       <DependentUpon>BaseListBoxProgressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tasks\UsingTasksForm.cs">
@@ -70,11 +162,17 @@
     <Compile Include="Forms\Tasks\UsingTasksForm.Designer.cs">
       <DependentUpon>UsingTasksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HelperForms\DownloadPdfForm.cs">
+    <Compile Include="Forms\BaseForms\DownloadPdfForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HelperForms\DownloadPdfForm.Designer.cs">
+    <Compile Include="Forms\BaseForms\DownloadPdfForm.Designer.cs">
       <DependentUpon>DownloadPdfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Threads\BackgroundForegroundThreadsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Threads\BackgroundForegroundThreadsForm.Designer.cs">
+      <DependentUpon>BackgroundForegroundThreadsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Threads\ThreadInvokeForm.cs">
       <SubType>Form</SubType>
@@ -94,6 +192,24 @@
     <Compile Include="Forms\Threads\ThreadCallbackForm.Designer.cs">
       <DependentUpon>ThreadCallbackForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateUI\ResponsiveUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\ResponsiveUpdateForm.Designer.cs">
+      <DependentUpon>ResponsiveUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\UpdateUIUsingDelegateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\UpdateUIUsingDelegateForm.Designer.cs">
+      <DependentUpon>UpdateUIUsingDelegateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\UpdateUIUsingMethodInvokerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateUI\UpdateUIUsingMethodInvokerForm.Designer.cs">
+      <DependentUpon>UpdateUIUsingMethodInvokerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Tasks\UsingTasksContinueWithForm.cs">
@@ -108,20 +224,74 @@
     <Compile Include="Forms\Threads\JoinThreadForm.Designer.cs">
       <DependentUpon>JoinThreadForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\HelperForms\BaseListBoxForm.resx">
+    <EmbeddedResource Include="Forms\BaseForms\BaseAsyncForm.resx">
+      <DependentUpon>BaseAsyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForms\BaseListBoxForm.resx">
       <DependentUpon>BaseListBoxForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HelperForms\BaseListBoxProgressForm.resx">
+    <EmbeddedResource Include="Forms\BaseForms\BaseListBoxProgressForm.resx">
       <DependentUpon>BaseListBoxProgressForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HelperForms\DownloadPdfForm.resx">
+    <EmbeddedResource Include="Forms\BaseForms\DownloadPdfForm.resx">
       <DependentUpon>DownloadPdfForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\AwaitAllOneByOneForm.resx">
+      <DependentUpon>AwaitAllOneByOneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\AwaitAnyTaskForm.resx">
+      <DependentUpon>AwaitAnyTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\BasicAsyncForm.resx">
+      <DependentUpon>BasicAsyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\AwaitAllTasksForm.resx">
+      <DependentUpon>AwaitAllTasksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\CancelTaskForm.resx">
+      <DependentUpon>CancelTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\ContinueWhenAllForm.resx">
+      <DependentUpon>ContinueWhenAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\DeadlockForm.resx">
+      <DependentUpon>DeadlockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\FireAndForgetForm.resx">
+      <DependentUpon>FireAndForgetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\HandlingExceptionsForm.resx">
+      <DependentUpon>HandlingExceptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\LongRunningOperationsForm.resx">
+      <DependentUpon>LongRunningOperationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\PassingArgumentsForm.resx">
+      <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\PushPullForm.resx">
+      <DependentUpon>PushPullForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
+      <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Threads\AbortThreadForm.resx">
       <DependentUpon>AbortThreadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Threads\BackgroundForegroundThreadsForm.resx">
+      <DependentUpon>BackgroundForegroundThreadsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateUI\ResponsiveUpdateForm.resx">
+      <DependentUpon>ResponsiveUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateUI\UpdateUIUsingDelegateForm.resx">
+      <DependentUpon>UpdateUIUsingDelegateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateUI\UpdateUIUsingMethodInvokerForm.resx">
+      <DependentUpon>UpdateUIUsingMethodInvokerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,7 +321,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PushPullMechanism\PushPullMechanism.csproj">
+      <Project>{81E19E08-199C-4577-8617-7DCFEF2D85A0}</Project>
+      <Name>PushPullMechanism</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

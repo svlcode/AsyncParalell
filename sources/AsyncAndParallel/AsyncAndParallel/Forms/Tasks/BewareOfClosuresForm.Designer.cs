@@ -1,6 +1,6 @@
-﻿namespace AsyncAndParallel
+﻿namespace AsyncAndParallel.Forms.Tasks
 {
-    partial class UsingTasksContinueWithForm
+    partial class BewareOfClosuresForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(93, 12);
-            this.progressBar1.Size = new System.Drawing.Size(493, 23);
-            // 
-            // txtNumber
-            // 
-            this.txtNumber.Visible = false;
-            // 
-            // listBoxResult
-            // 
-            this.listBoxResult.Size = new System.Drawing.Size(574, 342);
-            // 
-            // UsingTasksContinueWithForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 400);
-            this.Name = "UsingTasksContinueWithForm";
-            this.Text = "UsingTasksContinueWithForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "BewareOfClosuresForm";
         }
 
         #endregion

@@ -1,6 +1,6 @@
-﻿namespace AsyncAndParallel
+﻿namespace AsyncAndParallel.Forms.UpdateUI
 {
-    partial class BaseListBoxProgressForm
+    partial class UpdateUIUsingDelegateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(93, 12);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(179, 23);
-            this.progressBar1.TabIndex = 2;
-            // 
-            // BaseListBoxProgressForm
+            // UpdateUiThreadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.progressBar1);
-            this.Name = "BaseListBoxProgressForm";
-            this.Text = "BaseListBoxProgressForm";
-            this.Controls.SetChildIndex(this.progressBar1, 0);
-            this.Controls.SetChildIndex(this.btnStart, 0);
-            this.Controls.SetChildIndex(this.listBoxResult, 0);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "UpdateUiThreadForm";
+            this.Text = "UpdateUiThreadForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        protected System.Windows.Forms.ProgressBar progressBar1;
     }
 }

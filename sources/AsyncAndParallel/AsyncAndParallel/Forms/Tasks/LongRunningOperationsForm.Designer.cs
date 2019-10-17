@@ -1,6 +1,6 @@
-﻿namespace AsyncAndParallel
+﻿namespace AsyncAndParallel.Forms.Tasks
 {
-    partial class UsingTasksContinueWithForm
+    partial class LongRunningOperationsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,24 +32,23 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(93, 12);
-            this.progressBar1.Size = new System.Drawing.Size(493, 23);
+            this.progressBar1.Size = new System.Drawing.Size(643, 23);
             // 
             // txtNumber
             // 
-            this.txtNumber.Visible = false;
+            this.txtNumber.Text = "50";
             // 
             // listBoxResult
             // 
-            this.listBoxResult.Size = new System.Drawing.Size(574, 342);
+            this.listBoxResult.Size = new System.Drawing.Size(776, 368);
             // 
-            // UsingTasksContinueWithForm
+            // LongRunningOperationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 400);
-            this.Name = "UsingTasksContinueWithForm";
-            this.Text = "UsingTasksContinueWithForm";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "LongRunningOperationsForm";
+            this.Text = "LongRunningOperationsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
