@@ -12,9 +12,8 @@ namespace PushPullMechanism
         private Listener _listener;
         private InternalDummyService _dummyService;
         private TaskCompletionSource<string> _taskCompletionSource;
-        private CancellationTokenSource _cts;
-
         public event EventHandler<MyValueEventArgs> ValueUpdated;
+        public event EventHandler<MyValueEventArgs> Error;
 
         private bool _currentPositionRequested;
 
@@ -22,7 +21,25 @@ namespace PushPullMechanism
         {
             _listener = new Listener();
             _listener.OnValueUpdated += Listener_OnValueUpdated;
+            _listener.OnError += Listener_OnError;
             _dummyService = new InternalDummyService();
+        }
+
+        private void Listener_OnError(object sender, MyValueEventArgs e)
+        {
+            this.Error?.Invoke(this, e);
+            if (_taskCompletionSource != null && !_taskCompletionSource.Task.IsCompleted)
+            {
+                _taskCompletionSource.SetException(new Exception(e.Value));
+                _taskCompletionSource = null;
+
+                if (_currentPositionRequested)
+                {
+                    _currentPositionRequested = false;
+                    _dummyService.Stop();
+                    _dummyService.Unregister();
+                }
+            }
         }
 
         private void Listener_OnValueUpdated(object sender, MyValueEventArgs e)
@@ -31,7 +48,6 @@ namespace PushPullMechanism
 
             if (_taskCompletionSource != null && !_taskCompletionSource.Task.IsCompleted)
             {
-                
                 _taskCompletionSource.SetResult(e.Value);
                 _taskCompletionSource = null;
 
@@ -46,28 +62,18 @@ namespace PushPullMechanism
 
         public async Task<string> GetPositionAsync()
         {
+            var task = GetPositionTaskAsync();
+            if (task == await Task.WhenAny(task, Task.Delay(1000)))
+                return await task;
+            else
+                throw new TimeoutException();
+        }
+
+        private Task<string> GetPositionTaskAsync()
+        {
             if (_taskCompletionSource == null)
             {
                 _taskCompletionSource = new TaskCompletionSource<string>();
-                _cts = new CancellationTokenSource();
-                const int timeoutMs = 2000;
-                _cts.CancelAfter(timeoutMs); // timeout after 2 seconds.
-                _cts.Token.Register(() =>
-                {
-                    _cts.Dispose();
-                    if (_taskCompletionSource != null && !_taskCompletionSource.Task.IsCompleted)
-                    {
-                        _taskCompletionSource.SetException(new Exception("Timeout error."));
-                        _taskCompletionSource = null;
-                        if (_currentPositionRequested)
-                        {
-                            _currentPositionRequested = false;
-                            _dummyService.Stop();
-                            _dummyService.Unregister();
-                        }
-                    }
-                }
-                , useSynchronizationContext: false);
 
                 if (!_dummyService.IsRunning)
                 {
@@ -77,7 +83,7 @@ namespace PushPullMechanism
                 }
 
             }
-            return await _taskCompletionSource.Task;
+            return _taskCompletionSource.Task;
         }
 
         public void Start()
