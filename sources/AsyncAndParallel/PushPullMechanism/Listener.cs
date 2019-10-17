@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace PushPullMechanism
 {
-    public class Listener : IListener
+    internal class Listener : IListener
     {
-        public event EventHandler<PositionEventArgs> OnPositionUpdated;
+        public event EventHandler<MyValueEventArgs> OnValueUpdated;
 
         //public event EventHandler<PositionEventArgs> OnDemandPositionUpdated;
 
         //public bool IsOnDemandPositionRequired { get; set; }
 
-        public void DidUpdateLocation(string location)
+        public void FireValueUpdate(string location)
         {
             // calculate position ....
             var position = location;
@@ -23,7 +23,7 @@ namespace PushPullMechanism
             //{
             //    OnDemandPositionUpdated?.Invoke(this, new PositionEventArgs(position));
             //}
-            OnPositionUpdated?.Invoke(this, new PositionEventArgs(position));
+            OnValueUpdated?.Invoke(this, new MyValueEventArgs(position));
         }
     }
 }

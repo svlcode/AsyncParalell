@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PushPullMechanism
 {
-    public class PositionEventArgs : EventArgs
+    public class MyValueEventArgs : EventArgs
     {
-        public string Position { get; private set; }
+        public string Value { get; private set; }
 
-        public PositionEventArgs(string position)
+        public MyValueEventArgs(string position)
         {
-            this.Position = position;
+            this.Value = position;
         }
     }
 }

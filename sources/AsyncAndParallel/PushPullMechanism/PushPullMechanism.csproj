@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IListener.cs" />
-    <Compile Include="IndoorPositioning.cs" />
+    <Compile Include="InternalDummyService.cs" />
     <Compile Include="Listener.cs" />
-    <Compile Include="PositionEventArgs.cs" />
-    <Compile Include="PositionService.cs" />
+    <Compile Include="MyValueEventArgs.cs" />
+    <Compile Include="MyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

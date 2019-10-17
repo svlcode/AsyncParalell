@@ -8,6 +8,6 @@ namespace PushPullMechanism
 {
     public interface IListener
     {
-        void DidUpdateLocation(string location);
+        void FireValueUpdate(string location);
     }
 }

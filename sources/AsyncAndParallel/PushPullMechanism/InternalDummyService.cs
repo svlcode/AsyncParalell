@@ -1,23 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace PushPullMechanism
 {
-    public class IndoorPositioning
+    internal class InternalDummyService
     {
-
         public bool IsRunning { get; set; }
         private IListener _listener;
         private static Random _random = new Random();
-
-        public IndoorPositioning()
-        {
-
-        }
 
         public void Start()
         {
@@ -26,10 +17,12 @@ namespace PushPullMechanism
             {
                 while (IsRunning)
                 {
-                    Thread.Sleep(350);
+                    var timeBetweenEvents = _random.Next(500, 3500);
+                    //var timeBetweenEvents = 2200;
+                    Thread.Sleep(timeBetweenEvents);
                     if (_listener != null)
                     {
-                        _listener.DidUpdateLocation($"{_random.Next(1, 100)},{_random.Next(1, 100)}");
+                        _listener.FireValueUpdate($"{timeBetweenEvents}");
                     }
                 }
             });
