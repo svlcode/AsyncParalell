@@ -137,5 +137,10 @@ namespace AsyncAndParallel
         {
             ShowForm<LongRunningOperationsForm>();
         }
+
+        private void btnPushPullMechanism_Click(object sender, EventArgs e)
+        {
+            ShowForm<PushPullForm>();
+        }
     }
 }

@@ -126,6 +126,12 @@
     <Compile Include="Forms\Tasks\PassingArgumentsForm.Designer.cs">
       <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tasks\PushPullForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\PushPullForm.Designer.cs">
+      <DependentUpon>PushPullForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tasks\UsingTaskCompletionSourceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     <EmbeddedResource Include="Forms\Tasks\PassingArgumentsForm.resx">
       <DependentUpon>PassingArgumentsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\PushPullForm.resx">
+      <DependentUpon>PushPullForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tasks\UsingTaskCompletionSourceForm.resx">
       <DependentUpon>UsingTaskCompletionSourceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,7 +321,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PushPullMechanism\PushPullMechanism.csproj">
+      <Project>{81E19E08-199C-4577-8617-7DCFEF2D85A0}</Project>
+      <Name>PushPullMechanism</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
