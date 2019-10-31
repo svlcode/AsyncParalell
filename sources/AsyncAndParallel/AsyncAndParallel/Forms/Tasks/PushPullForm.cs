@@ -13,12 +13,12 @@ namespace AsyncAndParallel.Forms.Tasks
 {
     public partial class PushPullForm : Form
     {
-        private MyService _positionService;
+        private MyService _myService;
 
         public PushPullForm()
         {
             InitializeComponent();
-            _positionService = new MyService();
+            _myService = new MyService();
         }
 
         private async void btnOnDemand_Click(object sender, EventArgs e)
@@ -28,7 +28,8 @@ namespace AsyncAndParallel.Forms.Tasks
 
             try
             {
-                lblOnDemandLocation.Text = await _positionService.GetPositionAsync();
+                var value = await _myService.GetValueOnDemandAsync(6000);
+                lblOnDemandLocation.Text = value.ToString();
             }
             catch (Exception ex)
             {
@@ -39,7 +40,7 @@ namespace AsyncAndParallel.Forms.Tasks
 
         private void PositionUpdated(object sender, MyValueEventArgs e)
         {
-            this.lblPollingLocation.Invoke(new Action(() => { lblPollingLocation.Text = e.Value; }));
+            this.lblPollingLocation.Invoke(new Action(() => { lblPollingLocation.Text = e.Value.ToString(); }));
         }
 
         private void btnStartPolling_Click(object sender, EventArgs e)
@@ -51,14 +52,14 @@ namespace AsyncAndParallel.Forms.Tasks
 
         private void Start()
         {
-            _positionService.ValueUpdated += PositionUpdated;
-            _positionService.Start();
+            _myService.ValueUpdated += PositionUpdated;
+            _myService.Start();
         }
 
         private void Stop()
         {
-            _positionService.ValueUpdated -= PositionUpdated;
-            _positionService.Stop();
+            _myService.ValueUpdated -= PositionUpdated;
+            _myService.Stop();
         }
 
         private void btnStopPolling_Click(object sender, EventArgs e)

@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PushPullMechanism
 {
     public class MyValueEventArgs : EventArgs
     {
-        public string Value { get; private set; }
+        public int Value { get; private set; }
 
-        public MyValueEventArgs(string position)
+        public MyValueEventArgs(int value)
         {
-            this.Value = position;
+            this.Value = value;
         }
     }
 }

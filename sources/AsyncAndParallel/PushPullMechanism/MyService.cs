@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace PushPullMechanism
@@ -11,9 +7,9 @@ namespace PushPullMechanism
     {
         private Listener _listener;
         private InternalDummyService _dummyService;
-        private TaskCompletionSource<string> _taskCompletionSource;
+        private TaskCompletionSource<int> _taskCompletionSource;
         public event EventHandler<MyValueEventArgs> ValueUpdated;
-        public event EventHandler<MyValueEventArgs> Error;
+        public event EventHandler<MyErrorEventArgs> Error;
 
         private bool _currentPositionRequested;
 
@@ -25,12 +21,12 @@ namespace PushPullMechanism
             _dummyService = new InternalDummyService();
         }
 
-        private void Listener_OnError(object sender, MyValueEventArgs e)
+        private void Listener_OnError(object sender, MyErrorEventArgs e)
         {
             this.Error?.Invoke(this, e);
             if (_taskCompletionSource != null && !_taskCompletionSource.Task.IsCompleted)
             {
-                _taskCompletionSource.SetException(new Exception(e.Value));
+                _taskCompletionSource.SetException(new Exception(e.Message));
                 _taskCompletionSource = null;
 
                 if (_currentPositionRequested)
@@ -46,34 +42,49 @@ namespace PushPullMechanism
         {
             this.ValueUpdated?.Invoke(this, e);
 
-            if (_taskCompletionSource != null && !_taskCompletionSource.Task.IsCompleted)
+            if (IsPrimeNumber(e.Value))
             {
-                _taskCompletionSource.SetResult(e.Value);
-                _taskCompletionSource = null;
-
-                if (_currentPositionRequested)
+                if (_taskCompletionSource != null && !_taskCompletionSource.Task.IsCompleted)
                 {
-                    _currentPositionRequested = false;
-                    _dummyService.Stop();
-                    _dummyService.Unregister();
+                    _taskCompletionSource.SetResult(e.Value);
+                    _taskCompletionSource = null;
+
+                    if (_currentPositionRequested)
+                    {
+                        _currentPositionRequested = false;
+                        _dummyService.Stop();
+                        _dummyService.Unregister();
+                    }
                 }
             }
         }
 
-        public async Task<string> GetPositionAsync()
+        private bool IsPrimeNumber(int value)
         {
-            var task = GetPositionTaskAsync();
-            if (task == await Task.WhenAny(task, Task.Delay(1000)))
-                return await task;
-            else
-                throw new TimeoutException();
+            for (int i = 2; i <= value/2; i++)
+            {
+                if (value % i == 0)
+                    return false;
+            }
+            return true;
         }
 
-        private Task<string> GetPositionTaskAsync()
+        public async Task<int> GetValueOnDemandAsync(int timeout)
+        {
+            var task = GetPositionTaskAsync();
+            if (task == await Task.WhenAny(task, Task.Delay(timeout)))
+                return await task;
+            else
+            {
+                throw new TimeoutException();
+            }
+        }
+
+        private Task<int> GetPositionTaskAsync()
         {
             if (_taskCompletionSource == null)
             {
-                _taskCompletionSource = new TaskCompletionSource<string>();
+                _taskCompletionSource = new TaskCompletionSource<int>();
 
                 if (!_dummyService.IsRunning)
                 {

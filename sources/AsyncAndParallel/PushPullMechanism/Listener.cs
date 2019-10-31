@@ -9,27 +9,16 @@ namespace PushPullMechanism
     internal class Listener : IListener
     {
         public event EventHandler<MyValueEventArgs> OnValueUpdated;
-        public event EventHandler<MyValueEventArgs> OnError;
-
-        //public event EventHandler<PositionEventArgs> OnDemandPositionUpdated;
-
-        //public bool IsOnDemandPositionRequired { get; set; }
+        public event EventHandler<MyErrorEventArgs> OnError;
 
         public void FireError(string message)
         {
-            OnError?.Invoke(this, new MyValueEventArgs(message));
+            OnError?.Invoke(this, new MyErrorEventArgs(message));
         }
 
-        public void FireValueUpdate(string location)
+        public void FireValueUpdate(int value)
         {
-            // calculate position ....
-            var position = location;
-
-            //if(IsOnDemandPositionRequired)
-            //{
-            //    OnDemandPositionUpdated?.Invoke(this, new PositionEventArgs(position));
-            //}
-            OnValueUpdated?.Invoke(this, new MyValueEventArgs(position));
+            OnValueUpdated?.Invoke(this, new MyValueEventArgs(value));
         }
     }
 }

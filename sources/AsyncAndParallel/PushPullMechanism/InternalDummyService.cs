@@ -19,8 +19,9 @@ namespace PushPullMechanism
                 while (IsRunning)
                 {
                     var timeBetweenEvents = _random.Next(500, 1500);
-                    var error = _random.Next(1, 4) % 3 == 0;
-                    if(error)
+                    //var error = _random.Next(1, 4) % 3 == 0;
+                    var error = false;
+                    if (error)
                     {
                         if (_listener != null)
                             _listener.FireError("Custom Error");
@@ -30,7 +31,7 @@ namespace PushPullMechanism
                         Thread.Sleep(timeBetweenEvents);
                         if (_listener != null)
                         {
-                            _listener.FireValueUpdate($"{timeBetweenEvents}");
+                            _listener.FireValueUpdate(timeBetweenEvents);
                         }
                     }
                     
@@ -45,7 +46,7 @@ namespace PushPullMechanism
             {
                 if (_listener != null)
                 {
-                    _listener.FireValueUpdate($"{timeBetweenEvents}");
+                    _listener.FireValueUpdate(timeBetweenEvents);
                 }
                 Run();
             });

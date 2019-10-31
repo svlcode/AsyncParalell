@@ -2,7 +2,7 @@
 {
     public interface IListener
     {
-        void FireValueUpdate(string location);
+        void FireValueUpdate(int value);
         void FireError(string message);
     }
 }
