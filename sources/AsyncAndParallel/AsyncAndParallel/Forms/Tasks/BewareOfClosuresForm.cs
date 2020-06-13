@@ -17,13 +17,13 @@ namespace AsyncAndParallel.Forms.Tasks
             {
                 // the task will make a closure over the variable 'i'
                 // this is not the correct way of passing data to a task.
+                
                 Task.Run(() =>
                 {
                     // taskId will have the same value for all tasks due to the fact 
                     // that there is a small delay between the task is started and the value 'i' is read
-                    var taskId = i;
 
-                    listBoxResult.Invoke(new MethodInvoker(() => { listBoxResult.Items.Add($"Started task {taskId}"); }));
+                    listBoxResult.Invoke(new Action(() => { listBoxResult.Items.Add($"Started task {i}"); }));
                 });
             }
         }

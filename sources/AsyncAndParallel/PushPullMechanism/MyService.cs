@@ -88,8 +88,7 @@ namespace PushPullMechanism
 
                 if (!_dummyService.IsRunning)
                 {
-                    _dummyService.Start();
-                    _dummyService.Register(_listener);
+                    Start();
                     _currentPositionRequested = true;
                 }
 
