@@ -14,13 +14,13 @@ namespace AsyncAndParallel.Forms.UpdateUI
 {
     public partial class ResponsiveUpdateForm : BaseAsyncForm
     {
-        private readonly SynchronizationContext synchronizationContext;
+        private readonly SynchronizationContext _synchronizationContext;
         private DateTime previousTime = DateTime.Now;
 
         public ResponsiveUpdateForm()
         {
             InitializeComponent();
-            synchronizationContext = SynchronizationContext.Current;
+            _synchronizationContext = SynchronizationContext.Current;
         }
 
         private async void btnStartAsync_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace AsyncAndParallel.Forms.UpdateUI
 
             await Task.Run(() =>
             {
-                for (var i = 0; i <= 5000000; i++)
+                for (var i = 0; i <= 5_000_000; i++)
                 {
                     UpdateUI(i);
                     count = i;
@@ -45,9 +45,9 @@ namespace AsyncAndParallel.Forms.UpdateUI
         {
             var timeNow = DateTime.Now;
 
-            if ((DateTime.Now - previousTime).Milliseconds <= 50) return;
+            if ((timeNow - previousTime).Milliseconds <= 50) return;
 
-            synchronizationContext.Post(new SendOrPostCallback(o =>
+            _synchronizationContext.Post(new SendOrPostCallback(o =>
             {
                 label1.Text = @"Counter " + (int)o;
             }), value);

@@ -33,6 +33,7 @@
             this.btnThreadCallback = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTasks = new System.Windows.Forms.TabPage();
+            this.btnPushPullMechanism = new System.Windows.Forms.Button();
             this.btnLongRunning = new System.Windows.Forms.Button();
             this.btnPassingArguments = new System.Windows.Forms.Button();
             this.btnBewareOfClosures = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.btnResponsiveUpdate = new System.Windows.Forms.Button();
             this.btnUpdateUsingMethodInvoker = new System.Windows.Forms.Button();
             this.btnUsingDelegate = new System.Windows.Forms.Button();
-            this.btnPushPullMechanism = new System.Windows.Forms.Button();
+            this.btnConfigureAwait = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageTasks.SuspendLayout();
             this.tabPageThreads.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             // tabPageTasks
             // 
+            this.tabPageTasks.Controls.Add(this.btnConfigureAwait);
             this.tabPageTasks.Controls.Add(this.btnPushPullMechanism);
             this.tabPageTasks.Controls.Add(this.btnLongRunning);
             this.tabPageTasks.Controls.Add(this.btnPassingArguments);
@@ -130,6 +132,16 @@
             this.tabPageTasks.TabIndex = 1;
             this.tabPageTasks.Text = "Tasks";
             this.tabPageTasks.UseVisualStyleBackColor = true;
+            // 
+            // btnPushPullMechanism
+            // 
+            this.btnPushPullMechanism.Location = new System.Drawing.Point(185, 93);
+            this.btnPushPullMechanism.Name = "btnPushPullMechanism";
+            this.btnPushPullMechanism.Size = new System.Drawing.Size(171, 23);
+            this.btnPushPullMechanism.TabIndex = 1;
+            this.btnPushPullMechanism.Text = "Push / Pull Mechanism";
+            this.btnPushPullMechanism.UseVisualStyleBackColor = true;
+            this.btnPushPullMechanism.Click += new System.EventHandler(this.btnPushPullMechanism_Click);
             // 
             // btnLongRunning
             // 
@@ -379,15 +391,15 @@
             this.btnUsingDelegate.UseVisualStyleBackColor = true;
             this.btnUsingDelegate.Click += new System.EventHandler(this.btnUsingDelegate_Click);
             // 
-            // btnPushPullMechanism
+            // btnConfigureAwait
             // 
-            this.btnPushPullMechanism.Location = new System.Drawing.Point(185, 93);
-            this.btnPushPullMechanism.Name = "btnPushPullMechanism";
-            this.btnPushPullMechanism.Size = new System.Drawing.Size(171, 23);
-            this.btnPushPullMechanism.TabIndex = 1;
-            this.btnPushPullMechanism.Text = "Push / Pull Mechanism";
-            this.btnPushPullMechanism.UseVisualStyleBackColor = true;
-            this.btnPushPullMechanism.Click += new System.EventHandler(this.btnPushPullMechanism_Click);
+            this.btnConfigureAwait.Location = new System.Drawing.Point(185, 122);
+            this.btnConfigureAwait.Name = "btnConfigureAwait";
+            this.btnConfigureAwait.Size = new System.Drawing.Size(171, 23);
+            this.btnConfigureAwait.TabIndex = 1;
+            this.btnConfigureAwait.Text = "ConfigureAwait Demo";
+            this.btnConfigureAwait.UseVisualStyleBackColor = true;
+            this.btnConfigureAwait.Click += new System.EventHandler(this.btnConfigureAwait_Click);
             // 
             // MainForm
             // 
@@ -437,5 +449,6 @@
         private System.Windows.Forms.Button btnDeadlock;
         private System.Windows.Forms.Button btnLongRunning;
         private System.Windows.Forms.Button btnPushPullMechanism;
+        private System.Windows.Forms.Button btnConfigureAwait;
     }
 }

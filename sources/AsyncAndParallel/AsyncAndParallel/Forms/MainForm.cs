@@ -142,5 +142,10 @@ namespace AsyncAndParallel
         {
             ShowForm<PushPullForm>();
         }
+
+        private void btnConfigureAwait_Click(object sender, EventArgs e)
+        {
+            ShowForm<ConfigureAwaitForm>();
+        }
     }
 }
